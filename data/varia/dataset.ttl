@@ -1,0 +1,252 @@
+############### NEEDS TO BE UPDATED
+
+@prefix ow: <http://www.omac.org/work#>.
+@prefix od: <http://www.omac.org/data#>.
+@prefix oc: <http://www.omac.org/claim#>.
+@prefix viaf: <http://viaf.org/viaf/>.
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+
+
+############### Missa o gente brunette ##############
+
+viaf:313248912
+    dcterms:title "Missa o gente brunette"^^xsd:string;
+    rdf:type ow:MusicalWork;
+    ow:composed_by viaf:44485735;
+    dbp:composed "1568"^^xsd:gYear;
+    dbp:genre <http://dbpedia.org/resource/Mass_(music)>;
+    ow:has_section od:Kyrie_MissaBrunette, od:Gloria_MissaBrunette, od:Credo_MissaBrunette, od:Sanctus_MissaBrunette, od:AgnusDei_MissaBrunette.
+
+od:Kyrie_MissaBrunette
+ow:order "1"^^xsd:int;
+dbp:genre dbr:Kyrie;
+ow:has_subsection od:Kyrie1_MissaBrunette, od:Christe_MissaBrunette, od:Kyrie2_MissaBrunette.
+
+od:Gloria_MissaBrunette
+  ow:order "2"^^xsd:int;
+  dbp:genre dbr:Gloria.
+
+od:Credo_MissaBrunette
+  ow:order "3"^^xsd:int;
+    dbp:genre dbr:Credo.
+
+od:Sanctus_MissaBrunette
+  ow:order "4"^^xsd:int;
+dbp:genre dbr:Sanctus;
+od:has_subsection od:Sanctus_section_MissaBrunette, od:PleniSunt_MissaBrunette, od:Osanna_MissaBrunette, od:Benedictus_MissaBrunette.
+
+od:AgnusDei_MissaBrunette
+  ow:order "5"^^xsd:int;
+dbp:genre <http://dbpedia.org/resource/Agnus_Dei_(music)>;
+ow:has_subsection od:AgnusDei1_MissaBrunette, od:AgnusDei2_MissaBrunette.
+
+viaf:44485735
+rdf:type ow:Composer;
+dbp:firstname "Nicolas"^^xsd:string;
+dbp:familyname "de Marle"^^xsd:string;
+dbp:name "Nicolas de Marle"^^xsd:string.
+
+
+############### Missa Je suis déshéritée##############
+
+viaf:313248882
+  dcterms:title "Missa Je suis déshéritée"^^xsd:string;
+  rdf:type ow:MusicalWork;
+  ow:composed_by viaf:51955127;
+  dbp:composed "1556"^^xsd:gYear;
+  dbp:genre <http://dbpedia.org/resource/Mass_(music)>;
+  ow:has_section od:Kyrie-MissaJeSuisDéshéritée, od:Gloria-MissaJeSuisDéshéritée, od:Credo-MissaJeSuisDéshéritée, od:Sanctus-MissaJeSuisDéshéritée, od:AgnusDei-MissaJeSuisDéshéritée.
+
+viaf:51955127
+   rdf:type ow:Composer;
+   dbp:firstname "Jean"^^xsd:string;
+   dbp:familyname "Guyon"^^xsd:string;
+   dbp:name "Jean Guyon"^^xsd:string.
+
+od:Kyrie-MissaJeSuisDéshéritée
+  dbp:genre dbr:Kyrie;
+  ow:order "1"^^xsd:int;
+  ow:has_subsection od:Kyrie1_MissaJeSuisDéshéritée, od:Christe_MissaJeSuisDéshéritée, od:Kyrie2_MissaJeSuisDéshéritée.
+
+od:Gloria-MissaJeSuisDéshéritée
+  dbp:genre dbr:Gloria;
+  ow:order "2"^^xsd:int.
+
+od:Credo-MissaJeSuisDéshéritée
+  dbp:genre dbr:Credo;
+  ow:order "3"^^xsd:int.
+
+od:Sanctus-MissaJeSuisDéshéritée
+  ow:order "4"^^xsd:int;
+  dbp:genre dbr:Sanctus;
+  od:has_subsection od:Sanctus_section_MissaJeSuisDéshéritée, od:PleniSunt_MissaJeSuisDéshéritée, od:Osanna_MissaJeSuisDéshéritée, od:Benedictus_MissaJeSuisDéshéritée.
+
+od:AgnusDei-MissaJeSuisDéshéritée
+  ow:order "5"^^xsd:int;
+  dbp:genre <http://dbpedia.org/resource/Agnus_Dei_(music)>;
+  ow:has_subsection od:AgnusDei1_MissaJeSuisDéshéritée, od:AgnusDei2_MissaJeSuisDéshéritée.
+
+
+############### Mozart's Symphony No. 35 ##############
+
+  viaf:294918919
+      dcterms:title "Symphony No. 35"^^xsd:string;
+      rdf:type ow:MusicalWork;
+      ow:composed_by viaf:32197206;
+      dbp:genre dbr:Symphony;
+      dbp:key dbr:D_major;
+      dbp:composed "1782"^^xsd:gYear;
+      ow:scored_for od:performing_force1;
+      ow:scored_for od:performing_force2.
+
+  viaf:32197206
+    dbp:firstname "Wolfgang Amadeus"^^xsd:string;
+    dbp:familyname "Mozart"^^xsd:string;
+    dbp:name "Wolfgang Amadeus Mozart"^^xsd:string;
+    dbp:birthDate "1756-01-27"^^xsd:date;
+    dbp:deathDate "1791-12-05"^^xsd:date.
+
+
+  od:performing_force1
+      rdf:type ow:PerformingForceAttribute;
+      ow:performing_force_type dbr:Oboe;
+      ow:number_performing_force "2"^^xsd:int.
+
+  od:performing_force2
+          rdf:type ow:PerformingForceAttribute;
+          ow:performing_force_type dbr:Flute;
+          ow:number_performing_force "2"^^xsd:int.
+
+
+############## Brahms' Piano Quartet Op. 25 ##############
+
+
+viaf:176303863
+    rdf:type ow:MusicalWork;
+    dcterms:title "Piano Quartet Op. 25"^^xsd:string;
+    ow:composed_by viaf:7573295;
+    ow:sections_number "4"^^xsd:int;
+    ow:has_section od:Op_25_m1, od:Op_25_m2, od:Op_25_m3, od:Op_25_m4;
+    dbp:genre dbr:Chamber_music;
+    dbp:key dbr:G_minor;
+    dbp:composed "1856–1861";
+    ow:scored_for dbr:Viola, dbr:Violin, dbr:Cello, dbr:Piano.
+
+viaf:7573295
+  dbp:firstname "Johannes"^^xsd:string;
+  dbp:familyname "Brahms"^^xsd:string;
+  dbp:name "Johannes Brahms"^^xsd:string;
+  dbp:birthDate "1833-05-07"^^xsd:date;
+  dbp:deathDate "1897-04-03"^^xsd:date.
+
+od:Op_25_m1 ow:order "1"^^xsd:int.
+od:Op_25_m2 ow:order "2"^^xsd:int.
+od:Op_25_m3 ow:order "3"^^xsd:int.
+od:Op_25_m4 ow:order "4"^^xsd:int.
+
+
+############## Composer -- Claudin de Sermisy ##############
+
+viaf:89469141 dbp:name "Claudin de Sermisy"^^xsd:string.
+
+
+############## Tota pulchra es ##############
+
+od:Tota_pulchra_es
+    dbp:genre ow:Chanson_genre;
+    ow:composed_by viaf:89469141;
+    dcterms:title "Tota pulchra es"^^xsd:string.
+
+
+############## Analyst -- Ian_Lorenz ##############
+
+    od:Ian_Lorenz
+       dbp:name "Ian Lorenz"^^xsd:string.
+
+
+############## Claim about segment in Tota Pulchra es ##############
+
+
+od:claim_analytic_segment_P1
+     rdf:type oc:AnalyticSegmentClaim;
+     oc:stated_by od:Ian_Lorenz;
+     oc:refers_to od:analytic_segment_P1;
+     #oc:refers_to od:Tota_pulchra_es;
+     oc:schema oc:Fuga_schema;
+     oc:melodic_interval_of_entry "4-"^^xsd:string;
+     oc:time_interval_of_entry "B2"^^xsd:string;
+     oc:periodic "false"^^xsd:boolean;
+     oc:strict "false"^^xsd:boolean;
+     oc:flexed "false"^^xsd:boolean;
+     oc:sequential "false"^^xsd:boolean;
+     oc:inverted "false"^^xsd:boolean;
+     oc:retrograde "false"^^xsd:boolean;
+     oc:remarks "Makes up a longer ID"^^xsd:string.
+
+od:analytic_segment_P1
+    rdf:type oc:AnalyticSegment;
+    oc:analytic_segment_of od:Tota_pulchra_es;
+    oc:ema "1-6/1,1,1-2,1-2,2,2/@1,@1-3,@1-3+@1,@1-3+@1-3,@1-3,@1"^^xsd:string.
+    #reference to this specific ema code is for testing purposes, needs improvements
+
+
+############## Missa tota pulchra es ##############
+
+viaf:180445237
+  dbp:genre <http://dbpedia.org/resource/Mass_(music)>;
+  dcterms:title "Missa tota pulchra es"^^xsd:string;
+  ow:composed_by viaf:89469141.
+
+
+############## Credo -- Missa tota pulchra es ##############
+
+od:Credo_MissaTotaPulchraEs
+    ow:section_of viaf:180445237;
+    dcterms:title "Missa tota pulchra es:Credo"^^xsd:string.
+
+
+############## Claim about segment in Credo_MissaTotaPulchraEs ##############
+
+od:analytic_segment_P2
+    rdf:type oc:AnalyticSegment;
+    oc:analytic_segment_of od:Credo_180445237;
+    oc:ema "1-6/1,1,1+3,1+3,3,3/@1-4,@1-3,@1-3+@1-4,@1-3+@1-3,@1-3,@1"^^xsd:string.
+    #reference to this specific ema code is for testing purposes (to be improved)
+
+od:claim_analytic_segment_P2
+     rdf:type oc:AnalyticSegmentClaim;
+     oc:stated_by od:Ian_Lorenz;
+     oc:refers_to od:analytic_segment_P2;
+     #oc:refers_to od:Credo_180445237;
+     #oc:refers_to viaf:180445237;
+     oc:schema oc:Fuga_schema;
+     oc:melodic_interval_of_entry "4-"^^xsd:string;
+     oc:time_interval_of_entry "B2"^^xsd:string;
+     oc:periodic "false"^^xsd:boolean;
+     oc:strict "false"^^xsd:boolean;
+     oc:flexed "false"^^xsd:boolean;
+     oc:sequential "false"^^xsd:boolean;
+     oc:inverted "false"^^xsd:boolean;
+     oc:retrograde "false"^^xsd:boolean;
+     oc:remarks "Makes up a longer ID"^^xsd:string.
+
+
+############## Claim about similarity relationship ##############
+
+od:similarity_claim_R1
+  rdf:type oc:SimilarityClaim;
+  oc:refers_to od:relationship_R1;
+  oc:stated_by od:Ian_Lorenz.
+
+od:relationship_R1
+    rdf:type oc:Quotation;
+    oc:has_model od:Tota_pulchra_es;
+    oc:has_derivative od:Credo_MissaTotaPulchraEs;
+    oc:exact "true"^^xsd:boolean;
+    oc:monnayage "false"^^xsd:boolean.
