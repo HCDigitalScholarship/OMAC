@@ -482,14 +482,7 @@ In terms of the shortcut, we simply write:
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org/work#has_attribute"/>
         <owl:inverseOf rdf:resource="http://www.omac.org/work#scoring_of"/>
         <rdfs:domain rdf:resource="http://www.omac.org/work#MusicalEntity"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org/work#PerformingForceAttribute"/>
-                    <rdf:Description rdf:about="http://www.omac.org/work#PerformingForceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://www.omac.org/work#PerformingForceAttribute"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Included in OMAC work module</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scored for</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation is used to link a musical entity to its performing force attribute</skos:definition>
@@ -498,14 +491,7 @@ In terms of the shortcut, we simply write:
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://www.omac.org/work#scored_for"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
-        <owl:annotatedTarget>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org/work#PerformingForceAttribute"/>
-                    <rdf:Description rdf:about="http://www.omac.org/work#PerformingForceType"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:resource="http://www.omac.org/work#PerformingForceAttribute"/>
         <rdfs:comment xml:lang="en">This range restriction is  expressed using the disjunction between Performing Force and Performing Force Type in such a way to allow the shortcut: Musical Entity scored-of Performing Force Type, a possibility to be adopted when the number of performing force for a certain type is equal to 1. For instance, Brahm&apos;s Op. 25 scored-for Piano etc (i.e., for 1 piano)</rdfs:comment>
     </owl:Axiom>
     
