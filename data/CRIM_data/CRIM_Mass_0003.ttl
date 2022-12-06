@@ -1,0 +1,46 @@
+@prefix om:<http://www.omac.org#>.
+@prefix od:<http://www.omac.org/data#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix viaf: <http://viaf.org/viaf/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+viaf:313248912
+    dcterms:title "Missa o gente brunette"^^xsd:string;
+    rdf:type om:MusicalWork;
+    om:composed_by viaf:44485735;
+    dbp:composed "1568"^^xsd:gYear;
+    dbp:genre od:313248912_genre;
+    om:sections_number "5";
+    om:has_section od:Kyrie_MB, od:Gloria_MB, od:Credo_MB, od:Sanctus_MB, od:AgnusDei_MB.
+
+od:313248912_genre
+rdf:type om:GenreAttribute;
+om:has_value <http://dbpedia.org/resource/Mass_(music)>.
+
+od:Kyrie_MB
+om:order "1"^^xsd:int;
+om:has_subsection od:Kyrie1_MB, od:Christe_MB, od:Kyrie2_MB.
+
+od:Gloria_MB
+om:order "2"^^xsd:int.
+
+od:Credo_MB
+  om:order "3"^^xsd:int.
+
+od:Sanctus_MB
+  om:order "4"^^xsd:int;
+od:has_subsection od:Sanctus_ss_MB, od:PleniSunt_MB, od:Osanna_MB, od:Benedictus_MB.
+
+od:AgnusDei_MB
+  om:order "5"^^xsd:int;
+om:has_subsection od:AgnusDei1_MB, od:AgnusDei2_MB.
+
+viaf:44485735
+rdf:type om:Composer;
+dbp:firstname "Nicolas"^^xsd:string;
+dbp:familyname "de Marle"^^xsd:string;
+dbp:name "Nicolas de Marle"^^xsd:string.

@@ -1,0 +1,48 @@
+@prefix od: <http://www.omac.org/data#>.
+@prefix om: <http://www.omac.org#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix viaf: <http://viaf.org/viaf/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+viaf:89469141 dbp:name "Claudin de Sermisy"^^xsd:string.
+
+viaf:180445237
+  rdf:type om:MusicalWork;
+  dcterms:title "Missa tota pulchra es"^^xsd:string;
+  om:composed_by viaf:89469141;
+  om:has_expression od:180445237_score.
+
+od:Credo_180445237
+    rdf:type om:MusicalSection;
+    om:section_of viaf:180445237;
+    dcterms:title "Missa tota pulchra es:Credo"^^xsd:string;
+    om:has_expression od:Credo_180445237_score.
+
+od:180445237_score
+  rdf:type om:Score.
+
+od:Credo_180445237_score
+  rdf:type om:Score;
+  om:part_of od:180445237_score.
+
+od:obs_P2
+     rdf:type om:StructureClaim;
+     om:observed_by od:Ian_Lorenz;
+     om:concerns od:seg_P2;
+     om:has_schema om:Fuga_schema;
+     om:melodic_interval_of_entry "4-"^^xsd:string;
+     om:time_interval_of_entry "B2"^^xsd:string;
+     om:periodic "false"^^xsd:boolean;
+     om:strict "false"^^xsd:boolean;
+     om:flexed "false"^^xsd:boolean;
+     om:sequential "false"^^xsd:boolean;
+     om:inverted "false"^^xsd:boolean;
+     om:retrograde "false"^^xsd:boolean;
+     om:remarks "Makes up a longer ID"^^xsd:string;
+     dbp:url "https://crimproject.org/observations/2/"^^xsd:anyURI.
+
+od:seg_P2
+  rdf:type om:AnalyticSegment;
+  om:segment_of od:Credo_180445237_score.

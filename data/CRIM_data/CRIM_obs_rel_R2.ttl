@@ -1,0 +1,50 @@
+@prefix od: <http://www.omac.org/data#>.
+@prefix om: <http://www.omac.org#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix viaf: <http://viaf.org/viaf/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+viaf:89469141
+     dbp:name "Claudin de Sermisy"^^xsd:string.
+
+viaf:180445237
+  rdf:type om:MusicalWork;
+  dcterms:title "Missa tota pulchra es"^^xsd:string;
+  om:composed_by viaf:89469141;
+  om:has_score od:180445237_score.
+
+od:180445237_score rdf:type om:Score.
+
+od:Credo_180445237
+      rdf:type om:MusicalSection;
+      dcterms:title "Credo"^^xsd:string;
+      om:section_of viaf:180445237;
+      om:has_score od:Credo_180445237_score.
+
+od:Credo_180445237_score rdf:type om:Score.
+
+od:Tota_pulchra_es
+    rdf:type  om:MusicalWork;
+    dcterms:title "Tota pulchra es"^^xsd:string;
+    om:composed_by viaf:89469141;
+    om:has_score od:Tota_pulchra_es_score.
+
+od:Tota_pulchra_es_score rdf:type om:Score.
+
+
+od:obs_R2
+  rdf:type om:NonMechanicalTransformation;
+  om:has_model od:Tota_pulchra_es_score;
+  om:has_derivative od:Credo_180445237_score;
+  om:observed_by od:Ian_Lorenz;
+  om:new_counter_subject "false"^^xsd:boolean;
+  om:old_counter_subject_shifted_metrically "true"^^xsd:boolean;
+  om:old_counter_subject_transposed "false"^^xsd:boolean;
+  om:new_combination "false"^^xsd:boolean;
+  dbp:url "https://crimproject.org/relationships/2/"^^xsd:anyURI.
+
+
+od:Ian_Lorenz
+   dbp:name "Ian Lorenz"^^xsd:string.
