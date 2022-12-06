@@ -1,0 +1,2573 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.omac.org#"
+     xml:base="http://www.omac.org"
+     xmlns:dbo="http://dbpedia.org/ontology/"
+     xmlns:dbp="http://dbpedia.org/property/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:viaf="http://viaf.org/viaf/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.omac.org">
+        <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emilio M. Sanfilippo, Laboratory for Applied Ontology, ISTC-CNR, Italy
+Richard Freedman, Haverford College, USA</dcterms:creator>
+        <dcterms:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Music and Musicology</dcterms:subject>
+        <owl:versionInfo>under development. This version covers both works and observations</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/</rdfs:isDefinedBy>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/</rdfs:isDefinedBy>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.omac.org#Example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.omac.org#Example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date">
+        <rdfs:comment xml:lang="en">Common xsd:date format is: YYYY-MM-DD (e.g., 2001-10-26)</rdfs:comment>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/property/birthPlace -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/property/birthPlace">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">birth place</rdfs:label>
+        <skos:prefLabel xml:lang="en">birth place</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/composer -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/property/composer">
+        <owl:inverseOf rdf:resource="http://www.omac.org#composed_by"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composer of</rdfs:label>
+        <skos:definition xml:lang="en">The relation is used to bind a person to the musical entity that s/he has composed</skos:definition>
+        <skos:prefLabel xml:lang="en">composer of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/deathPlace -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/property/deathPlace">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">death place</rdfs:label>
+        <skos:prefLabel xml:lang="en">death place</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/genre -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/property/genre">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#GenreAttribute"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has genre</rdfs:label>
+        <skos:prefLabel xml:lang="en">has genre</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/key -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/property/key">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#KeyAttribute"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has key</rdfs:label>
+        <skos:altLabel xml:lang="en">key</skos:altLabel>
+        <skos:prefLabel xml:lang="en">has key</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#attribute_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#attribute_of">
+        <owl:inverseOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                    <rdf:Description rdf:about="http://www.omac.org#Observation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>attribute of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#authorial_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#authorial_part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#part_of"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#has_authorial_part"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <Example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The first movement of Beethoven&apos;s Symp. No. 9 is authorial part of the Symp. No. 9</Example>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">authorial part of</rdfs:label>
+        <skos:definition xml:lang="en">The relation is used to represent the structure of musical entities, e.g., a symphony composed of movements and sections.</skos:definition>
+        <skos:prefLabel xml:lang="en">authorial part of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#composed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#composed_by">
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#authorial_part_of"/>
+            <rdf:Description rdf:about="http://www.omac.org#composed_by"/>
+        </owl:propertyChainAxiom>
+        <Example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Symphony No. 9 was composed by Ludwig van Beethoven</Example>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed by</rdfs:label>
+        <skos:definition xml:lang="en">The relation is used to bind a musical entity to the person who composed it</skos:definition>
+        <skos:prefLabel xml:lang="en">composed by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#concerns -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#concerns">
+        <owl:inverseOf rdf:resource="http://www.omac.org#related_to"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#concerns"/>
+            <rdf:Description rdf:about="http://www.omac.org#expression_of"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#concerns"/>
+            <rdf:Description rdf:about="http://www.omac.org#part_of"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concerns</rdfs:label>
+        <skos:prefLabel xml:lang="en">concerns</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#derivative_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#derivative_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#related_to"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#has_derivative"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:range rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derivative in</rdfs:label>
+        <skos:prefLabel xml:lang="en">derivative in</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#derivative_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#derivative_of">
+        <owl:inverseOf rdf:resource="http://www.omac.org#model_for"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derivative of</rdfs:label>
+        <skos:prefLabel xml:lang="en">derivative of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#expression_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#expression_of">
+        <owl:inverseOf rdf:resource="http://www.omac.org#has_expression"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expression of</rdfs:label>
+        <skos:prefLabel xml:lang="en">expression of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_analytic_segment -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_analytic_segment">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_part"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#segment_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has analytic segment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_attribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_attribute">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                    <rdf:Description rdf:about="http://www.omac.org#Observation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:label>has attribute</rdfs:label>
+        <skos:prefLabel xml:lang="en">has attribute</skos:prefLabel>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.omac.org#has_attribute"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+        <owl:annotatedTarget rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:comment>The use of logical disjunction (OR) is used to allow a sort of modeling shortcut. For instance, saying that a work has-genre Credo, means that the work&apos;s genre-attribute has-value Credo.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.omac.org#has_authorial_part -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_authorial_part">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_part"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+        <Example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beethoven&apos;s Symp. No. 9 has authorial part the first, second, third, four movements</Example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation is used to represent the structure of musical entities, e.g., a symphony composed of movements and sections.</rdfs:comment>
+        <rdfs:label xml:lang="en">has authorial part</rdfs:label>
+        <skos:prefLabel xml:lang="en">has authorial part</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_derivative -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_derivative">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#concerns"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has derivative</rdfs:label>
+        <skos:prefLabel xml:lang="en">has derivative</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_expression -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_expression">
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has expression</rdfs:label>
+        <skos:prefLabel xml:lang="en">has expression</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_model -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_model">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#concerns"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#model_in"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has model</rdfs:label>
+        <skos:prefLabel xml:lang="en">has model</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_part -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_part">
+        <owl:inverseOf rdf:resource="http://www.omac.org#part_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">At the current state, parthood relations can hold across multiple branches of the ontology.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part</rdfs:label>
+        <skos:prefLabel xml:lang="en">has part</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_performing_force_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_performing_force_type">
+        <rdfs:domain rdf:resource="http://www.omac.org#PerformingForceAttribute"/>
+        <rdfs:range rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has performing force type</rdfs:label>
+        <skos:prefLabel xml:lang="en">has performing force type</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_schema -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_schema">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                    <rdf:Description rdf:about="http://www.omac.org#Observation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.omac.org#SchemaAttribute"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has schema</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_section -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_section">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_authorial_part"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#section_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalWork"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalSection"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relationship is used to model a musical work that is (authorial) section of another musical work. Sections could be further decomposed into sub-sections (see the relation: has subsection)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has section</rdfs:label>
+        <skos:prefLabel xml:lang="en">has section</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_style -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_style">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#StyleAttribute"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has style</rdfs:label>
+        <skos:prefLabel xml:lang="en">has style</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_subsection -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_subsection">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_authorial_part"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#subsection_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalSubsection"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#has_section"/>
+            <rdf:Description rdf:about="http://www.omac.org#has_subsection"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsections are the smallest parts of musical works which can not be further decomposed in authorial musical entities</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has subsection</rdfs:label>
+        <skos:prefLabel xml:lang="en">has subsection</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_value -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_value">
+        <rdfs:domain rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:range rdf:resource="http://www.omac.org#AttributeValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has value</rdfs:label>
+        <skos:prefLabel xml:lang="en">has value</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#model_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#model_for">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#model_in"/>
+            <rdf:Description rdf:about="http://www.omac.org#has_derivative"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation used to represent an expression/musical entity that is used as model for another expression/musical entity (by the same or different composer)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#model_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#model_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#related_to"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:range rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model in</rdfs:label>
+        <skos:prefLabel xml:lang="en">model in</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#observed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#observed_by">
+        <owl:inverseOf rdf:resource="http://www.omac.org#observes"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#observes">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#part_of">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part of</rdfs:label>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#related_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#related_to">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">related to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#scored_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#scored_for">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <owl:inverseOf rdf:resource="http://www.omac.org#scoring_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#PerformingForceAttribute"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scored for</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation is used to link a musical entity to its performing force attribute</skos:definition>
+        <skos:prefLabel xml:lang="en">scored for</skos:prefLabel>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.omac.org#scored_for"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+        <owl:annotatedTarget rdf:resource="http://www.omac.org#PerformingForceAttribute"/>
+        <rdfs:comment xml:lang="en">This range restriction is  expressed using the disjunction between Performing Force and Performing Force Type in such a way to allow the shortcut: Musical Entity scored-of Performing Force Type, a possibility to be adopted when the number of performing force for a certain type is equal to 1. For instance, Brahm&apos;s Op. 25 scored-for Piano etc (i.e., for 1 piano)</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.omac.org#scoring_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#scoring_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#attribute_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#PerformingForceAttribute"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scoring of</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The relation is used to link a musical entity to its performing forces</skos:definition>
+        <skos:prefLabel xml:lang="en">scoring of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#section_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#section_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#authorial_part_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalSection"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalWork"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section of</rdfs:label>
+        <skos:prefLabel xml:lang="en">section of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#segment_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#segment_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#part_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">analytic segment of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#subsection_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#subsection_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#authorial_part_of"/>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalSubsection"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subsection of</rdfs:label>
+        <skos:prefLabel xml:lang="en">subsection of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/property/birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/birthDate">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">birth date</rdfs:label>
+        <skos:prefLabel xml:lang="en">birth date</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/birthYear -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/birthYear">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">birth year</rdfs:label>
+        <skos:prefLabel xml:lang="en">birth year</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/composed -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/composed">
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed</rdfs:label>
+        <skos:altLabel xml:lang="en">composed</skos:altLabel>
+        <skos:prefLabel xml:lang="en">composition date</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/deathDate -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/deathDate">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/ontology/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">death date</rdfs:label>
+        <skos:prefLabel xml:lang="en">death date</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/deathYear -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/deathYear">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">death year</rdfs:label>
+        <skos:prefLabel xml:lang="en">death year</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/familyname -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/familyname">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">familyname</rdfs:label>
+        <skos:prefLabel xml:lang="en">familyname</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/firstname -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/firstname">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <skos:prefLabel xml:lang="en">firstname</skos:prefLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">firstname</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/name -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/name">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation is used to represent a person&apos;s entire name (e.g., Ludwig van Beethoven)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</rdfs:label>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/url -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/url">
+        <rdfs:isDefinedBy xml:lang="en">http://dbpedia.org/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL</rdfs:label>
+        <skos:prefLabel xml:lang="en">URL</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</rdfs:label>
+        <skos:prefLabel xml:lang="en">title</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#CRIM_identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#CRIM_identifier">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRIM identifier</rdfs:label>
+        <skos:definition xml:lang="en">Identifier specific within the scope of the CRIM project</skos:definition>
+        <skos:prefLabel xml:lang="en">CRIM identifier</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#amplified -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#amplified">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">amplified</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#double_or_invertible_counterpoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#double_or_invertible_counterpoint">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">consider to split this with OR</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">double or invertible counterpoint</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#embellished -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#embellished">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">embellished</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#exact -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#exact">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">exact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#flexed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#flexed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">flexed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#flexed_tonal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#flexed_tonal">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">flexed tonal</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#inverted -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#inverted">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">inverted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#invertible -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#invertible">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">invertible</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#melodic_interval_of_entry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#melodic_interval_of_entry">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">melodic interval of entry</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#melodically_inverted -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#melodically_inverted">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">melodically inverted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#metrically_shifted -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#metrically_shifted">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">metrically shifted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#monnayage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#monnayage">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">monnayage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#new_combination -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#new_combination">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">new combination</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#new_counter_subject -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#new_counter_subject">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">new counter subject</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#number_performing_force -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#number_performing_force">
+        <rdfs:domain rdf:resource="http://www.omac.org#PerformingForceAttribute"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number of performing force</rdfs:label>
+        <skos:definition xml:lang="en">This relation is used to represent the number of performing forces per type. For example, Mozart&apos;s Symphony No. 35 has 2 Oboes</skos:definition>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numer of performing forces</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#old_counter_subject_shifted_metrically -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#old_counter_subject_shifted_metrically">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">old counter subject shifted metrically</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#old_counter_subject_transposed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#old_counter_subject_transposed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">old counter subject transposed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#order -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#order">
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">authorial part order</rdfs:label>
+        <skos:altLabel xml:lang="en">order</skos:altLabel>
+        <skos:definition xml:lang="en">The relation is used to represent the order of an authorial part (i.e., section or subsection) in a musical work. For example, a section of genre Kyrie is the first part of masses</skos:definition>
+        <skos:prefLabel xml:lang="en">authorial part order</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#periodic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#periodic">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">periodic</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#reduced -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#reduced">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">reduced</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#remarks -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#remarks">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">remarks</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#retrograde -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#retrograde">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">retrograde</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#sections_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#sections_number">
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has number of sections</rdfs:label>
+        <skos:definition xml:lang="en">Total number of sections in a musical work</skos:definition>
+        <skos:prefLabel xml:lang="en">has number of sections</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#sequential -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#sequential">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">sequential</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#sounding_in_different_voices -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#sounding_in_different_voices">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">sounding in different voice(s)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#strict -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#strict">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">strict</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#subsections_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#subsections_number">
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has number of subsections</rdfs:label>
+        <skos:definition xml:lang="en">Total number of subsections in a section or musical work</skos:definition>
+        <skos:prefLabel xml:lang="en">has number of subsections</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#time_interval_of_entry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#time_interval_of_entry">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">time interval of entry</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#transposed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#transposed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">transposed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#truncated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#truncated">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">truncated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#viaf_identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#viaf_identifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/ontology/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person</rdfs:label>
+        <skos:prefLabel xml:lang="en">Person</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Place -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Place">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_part"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#part_of"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/ontology/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Place</rdfs:label>
+        <skos:prefLabel xml:lang="en">Place</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#AnalyticSegment -->
+
+    <owl:Class rdf:about="http://www.omac.org#AnalyticSegment">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#segment_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#Score"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analytic segment is a pattern of a musical work or musical work part identified by an analyst. It is not therefore an authorial part of a musical work</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analytic Segment</rdfs:label>
+        <skos:prefLabel xml:lang="en">Analytic Segment</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Attribute -->
+
+    <owl:Class rdf:about="http://www.omac.org#Attribute">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#attribute_of"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                            <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+                            <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                            <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                            <rdf:Description rdf:about="http://www.omac.org#Observation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#AttributeValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The list of attributes is not exhaustive</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribute</rdfs:label>
+        <skos:prefLabel xml:lang="en">Attribute</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#AttributeValue -->
+
+    <owl:Class rdf:about="http://www.omac.org#AttributeValue">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribute Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Attribute Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Composer -->
+
+    <owl:Class rdf:about="http://www.omac.org#Composer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://dbpedia.org/property/composer"/>
+                        <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalEntity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A person who composes an authorial musical work</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Composer</rdfs:label>
+        <skos:prefLabel xml:lang="en">Composer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Expression -->
+
+    <owl:Class rdf:about="http://www.omac.org#Expression">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_part"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#part_of"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An expression is an abstract (and complex) pattern of characters in a certain notation (e.g., natural language, musical notes, etc)
+
+It is not the specific material pattern of ink printed in a book</rdfs:comment>
+        <rdfs:comment>To be possibly aligned with LRM</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expression</rdfs:label>
+        <skos:prefLabel xml:lang="en">Expression</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#GenreAttribute -->
+
+    <owl:Class rdf:about="http://www.omac.org#GenreAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#GenreValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#GenreValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genre</rdfs:label>
+        <skos:altLabel xml:lang="en">Genre Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Genre</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#GenreValue -->
+
+    <owl:Class rdf:about="http://www.omac.org#GenreValue">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#AttributeValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genre Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Genre Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#KeyAttribute -->
+
+    <owl:Class rdf:about="http://www.omac.org#KeyAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#KeyValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#KeyValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key</rdfs:label>
+        <skos:altLabel xml:lang="en">Key Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Key</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#KeyValue -->
+
+    <owl:Class rdf:about="http://www.omac.org#KeyValue">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#AttributeValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Key Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#MechanicalTransformation -->
+
+    <owl:Class rdf:about="http://www.omac.org#MechanicalTransformation">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Transformation"/>
+        <skos:altLabel xml:lang="en">Mechanical Transformation Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#MusicalEntity -->
+
+    <owl:Class rdf:about="http://www.omac.org#MusicalEntity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#composed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#Composer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_attribute"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_expression"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#Score"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_part"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#MusicalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#part_of"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#MusicalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Musical Entity is a general modeling element to organize more specific classes in the taxonomy. 
+It is not meant to be directly instantiated. It is not declared to be equivalent to its subclasses because we leave it open the possibility to further specialize its taxonomy.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Musical Entity</rdfs:label>
+        <skos:prefLabel xml:lang="en">Musical Entity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#MusicalSection -->
+
+    <owl:Class rdf:about="http://www.omac.org#MusicalSection">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#section_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalWork"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_authorial_part"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#MusicalSubsection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.omac.org#MusicalSubsection"/>
+        <Example xml:lang="en">Each movement of Beethoven&apos;s Symphony No. 9</Example>
+        <Example xml:lang="en">The Kyrie section of the Missa je suis déshéritée by Jean Guyon</Example>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Section</rdfs:label>
+        <skos:altLabel xml:lang="en">movement</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Section</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#MusicalSubsection -->
+
+    <owl:Class rdf:about="http://www.omac.org#MusicalSubsection">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.omac.org#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalEntity"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#subsection_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalSection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#subsection_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalWork"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#subsection_of"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.omac.org#MusicalSection"/>
+                            <rdf:Description rdf:about="http://www.omac.org#MusicalWork"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <Example xml:lang="en">The Christe as subsection of the Kyrie (section) of the Missa je suis déshéritée by Jean Guyon</Example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Included in OMAC work module</rdfs:comment>
+        <rdfs:comment>Subsections are the smallest parts of musical works which can not be further decomposed in authorial musical entities</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsection</rdfs:label>
+        <skos:prefLabel xml:lang="en">Subsection</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#MusicalWork -->
+
+    <owl:Class rdf:about="http://www.omac.org#MusicalWork">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <owl:disjointWith rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experts tend to refer to a whole entity (i.e., an entity with possibly multiple authorial parts) with the expression &apos;musical work&apos;. This is the reason why we distinguish between Musical Work Part and Musical Work</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Musical Work</rdfs:label>
+        <skos:prefLabel xml:lang="en">Musical Work</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#MusicalWorkPart -->
+
+    <owl:Class rdf:about="http://www.omac.org#MusicalWorkPart">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#authorial_part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalWork"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_part"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The notion of Musical Work Part is based on the authorial division of a musical composition in different parts as given by composers and identified in scores through, e.g., formal divisions.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Musical Work Part</rdfs:label>
+        <skos:prefLabel xml:lang="en">Musical Work Part</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#NewMaterial -->
+
+    <owl:Class rdf:about="http://www.omac.org#NewMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <skos:altLabel xml:lang="en">New Material Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#NonMechanicalTransformation -->
+
+    <owl:Class rdf:about="http://www.omac.org#NonMechanicalTransformation">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Transformation"/>
+        <skos:altLabel xml:lang="en">Non-Mechanical Transformation Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Observation -->
+
+    <owl:Class rdf:about="http://www.omac.org#Observation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#concerns"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                            <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+                            <rdf:Description rdf:about="http://www.omac.org#Attribute"/>
+                            <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                            <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#observed_by"/>
+                <owl:someValuesFrom rdf:resource="http://dbpedia.org/ontology/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim is a scholarly observation (statement) of a musical phenomenon according to which the latter is characterised by a scholar in terms of various properties</rdfs:comment>
+        <rdfs:comment xml:lang="en">The list of claims hereby included is not exhaustive</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observation</rdfs:label>
+        <skos:prefLabel xml:lang="en">Observation</skos:prefLabel>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.omac.org#Observation"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#concerns"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                            <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+                            <rdf:Description rdf:about="http://www.omac.org#Attribute"/>
+                            <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+                            <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>In principle observations can concern all domain entities</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.omac.org#Omission -->
+
+    <owl:Class rdf:about="http://www.omac.org#Omission">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <skos:altLabel xml:lang="en">Omission Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#PerformingForceAttribute -->
+
+    <owl:Class rdf:about="http://www.omac.org#PerformingForceAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_performing_force_type"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#PerformingForceType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#number_performing_force"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performing Force</rdfs:label>
+        <skos:altLabel xml:lang="en">Performing Force Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Performing Force</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#PerformingForceType -->
+
+    <owl:Class rdf:about="http://www.omac.org#PerformingForceType">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performing Force Type</rdfs:label>
+        <skos:prefLabel xml:lang="en">Performing Force Type</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Quotation -->
+
+    <owl:Class rdf:about="http://www.omac.org#Quotation">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <skos:altLabel xml:lang="en">Quotation Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#QuotationExact -->
+
+    <owl:Class rdf:about="http://www.omac.org#QuotationExact">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Quotation"/>
+        <skos:altLabel xml:lang="en">Quotation Exact Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#QuotationMonnayage -->
+
+    <owl:Class rdf:about="http://www.omac.org#QuotationMonnayage">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Quotation"/>
+        <skos:altLabel xml:lang="en">Quotation Monnayage Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SchemaAttribute -->
+
+    <owl:Class rdf:about="http://www.omac.org#SchemaAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#SchemaValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#SchemaValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schema</rdfs:label>
+        <skos:prefLabel xml:lang="en">Schema</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SchemaValue -->
+
+    <owl:Class rdf:about="http://www.omac.org#SchemaValue">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#AttributeValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schema Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Schema Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Score -->
+
+    <owl:Class rdf:about="http://www.omac.org#Score">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Score</rdfs:label>
+        <skos:prefLabel xml:lang="en">Score</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SelfEnchainment -->
+
+    <owl:Class rdf:about="http://www.omac.org#SelfEnchainment">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SelfRelationship"/>
+        <skos:altLabel xml:lang="en">Self Enchainment Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SelfRelationship -->
+
+    <owl:Class rdf:about="http://www.omac.org#SelfRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <skos:altLabel xml:lang="en">Selfrelationship Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SelfRepetition -->
+
+    <owl:Class rdf:about="http://www.omac.org#SelfRepetition">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SelfRelationship"/>
+        <skos:altLabel xml:lang="en">Self Repetition Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SelfReturn -->
+
+    <owl:Class rdf:about="http://www.omac.org#SelfReturn">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SelfRelationship"/>
+        <skos:altLabel xml:lang="en">Self Return Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SimilarityObservation -->
+
+    <owl:Class rdf:about="http://www.omac.org#SimilarityObservation">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_derivative"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_model"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#amplified"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#double_or_invertible_counterpoint"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#embellished"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#exact"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#melodically_inverted"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#metrically_shifted"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#monnayage"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#new_combination"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#new_counter_subject"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#old_counter_subject_shifted_metrically"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#old_counter_subject_transposed"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#reduced"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#retrograde"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#sounding_in_different_voices"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#transposed"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#truncated"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In sense of the terminology specific to the CRIM project, a claim of similarity between musical entities. All object- and data-properties used to characterize this class are imported from the CRIM&apos;s vocabulary</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/relationship-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity Observation</rdfs:label>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity Observation</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#StructureObservation -->
+
+    <owl:Class rdf:about="http://www.omac.org#StructureObservation">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#concerns"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#AnalyticSegment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_schema"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#SchemaAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#flexed"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#inverted"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#melodic_interval_of_entry"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#periodic"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#retrograde"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#sequential"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#strict"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#time_interval_of_entry"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In sense of the terminology specific to the CRIM project, an observation about the structure of an analytic segment (e.g., observing that the segment is a fuga with certain characteristics). All object- and data-properties used to characterize this class are defined in the scope of the CRIM&apos;s vocabulary</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structure Observation</rdfs:label>
+        <skos:prefLabel xml:lang="en">Structure Observation</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#StyleAttribute -->
+
+    <owl:Class rdf:about="http://www.omac.org#StyleAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#StyleValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#StyleValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Style</rdfs:label>
+        <skos:altLabel xml:lang="en">Style Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Style</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#StyleValue -->
+
+    <owl:Class rdf:about="http://www.omac.org#StyleValue">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#AttributeValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Style Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Style Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#Transformation -->
+
+    <owl:Class rdf:about="http://www.omac.org#Transformation">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <skos:altLabel xml:lang="en">Transformation Claim</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Baroque_music -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Baroque_music">
+        <rdf:type rdf:resource="http://www.omac.org#StyleValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baroque music (UK: /bəˈrɒk/ or US: /bəˈroʊk/) is a period or style of Western classical music composed from approximately 1600 to 1750. This era followed the Renaissance music era, and was followed in turn by the Classical era, with the galant style marking the transition between Baroque and Classical eras. The Baroque period is divided into three major phases: early, middle, and late. Overlapping in time, they are conventionally dated from 1580 to 1650, from 1630 to 1700, and from 1680 to 1750. Baroque music forms a major portion of the &quot;classical music&quot; canon, and is now widely studied, performed, and listened to. The term &quot;baroque&quot; comes from the Portuguese word barroco, meaning &quot;misshapen pearl&quot;. Key composers of the Baroque era include Johann Sebastian Bach, Antonio Vivaldi, George Fr</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baroque music style</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cello -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cello">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Chamber_music -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chamber_music">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chamber music is a form of classical music that is composed for a small group of instruments—traditionally a group that could fit in a palace chamber or a large room. Most broadly, it includes any art music that is performed by a small number of performers, with one performer to a part (in contrast to orchestral music, in which each string part is played by a number of performers). However, by convention, it usually does not include solo instrument performances.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chamber music genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Credo -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Credo">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment xml:lang="en">In Christian liturgy, the credo (Latin: [ˈkɾeːdoː]; Latin for &quot;I believe&quot;) is the Nicene-Constantinopolitan Creed – or its shorter and nowadays more used version, the Apostles&apos; Creed – in the Mass, either as a prayer, a spoken text, or sung as Gregorian chant or other musical settings of the Mass.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Credo genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/D_major -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/D_major">
+        <rdf:type rdf:resource="http://www.omac.org#KeyValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Flute -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Flute">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/G_minor -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/G_minor">
+        <rdf:type rdf:resource="http://www.omac.org#KeyValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G minor is a minor scale based on G, consisting of the pitches G, A, B♭, C, D, E♭, and F. Its key signature has two flats. Its relative major is B-flat major and its parallel major is G major. The G natural minor scale is: Changes needed for the melodic and harmonic versions of the scale are written in with accidentals as necessary (source DBPedia)</rdfs:comment>
+        <rdfs:isDefinedBy>http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G minor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Gloria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gloria">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gloria genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Hymn -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hymn">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hymn is a type of song, usually religious, specifically written for the purpose of adoration or prayer, and typically addressed to a deity or deities, or to a prominent figure or personification. The word hymn derives from Greek ὕμνος (hymnos), which means &quot;a song of praise&quot;. A writer of hymns is known as a hymnist. The singing or composition of hymns is called hymnody. Collections of hymns are known as hymnals or hymn books. Hymns may or may not include instrumental accompaniment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Hymn</rdfs:isDefinedBy>
+        <rdfs:label>Hymn genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Kyrie -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kyrie">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kyrie, a transliteration of Greek Κύριε, vocative case of Κύριος (Kyrios), is a common name of an important prayer of Christian liturgy, also called the Kyrie eleison (/ˈkɪəri.eɪ ɪˈleɪ.ɪsɒn, -sən/ KEER-ee-ay il-AY-iss-on, -⁠ən; Ancient Greek: Κύριε, ἐλέησον, romanized: Kýrie eléēson, lit. &apos;Lord, have mercy&apos;).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kyrie genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Medieval_music -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Medieval_music">
+        <rdf:type rdf:resource="http://www.omac.org#StyleValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medieval music encompasses the sacred and secular music of the Western Europe during the Middle Ages, from approximately the 6th to 15th centuries. It is the first and longest era of Western classical music and followed by the Renaissance music; the two eras comprise what musicologists term as early music, preceding the common practice period. Following the traditional divisions of the Middle Ages, medieval music can be divided into , , and medieval music.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medieval music style</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Oboe -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Oboe">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Orchestra -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Orchestra">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Piano -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Piano">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Renaissance_music -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Renaissance_music">
+        <rdf:type rdf:resource="http://www.omac.org#StyleValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Renaissance music is vocal and instrumental music written and performed in Europe during the Renaissance era. Consensus among music historians has been to start the era around 1400, with the end of the medieval era, and to close it around 1600, with the beginning of the Baroque period, therefore commencing the musical Renaissance about a hundred years after the beginning of the Renaissance as it is understood in other disciplines.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Renaissance music style</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Sanctus -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sanctus">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Sanctus (Latin: Sanctus, &quot;Holy&quot;) is a hymn in Christian liturgy. It may also be called the epinikios hymnos (Greek: ἐπινίκιος ὕμνος, &quot;Hymn of Victory&quot;) when referring to the Greek rendition. In Western Christianity, the Sanctus forms part of the Ordinary and is sung (or said) as the final words of the Preface of the Eucharistic Prayer of remembrance, consecration, and praise. The preface, which alters according to the season, usually concludes with words describing the praise of the worshippers joining with the angels, who are pictured as praising God with the words of the Sanctus.In the Byzantine Rite and general Eastern Orthodox Christianity, the Sanctus is offered as a response by the choir during the Holy Anaphora.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sanctus genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Symphony -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Symphony">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A symphony is an extended musical composition in Western classical music, written by composers, most often for orchestra. Although the term has had many meanings from its origins in the ancient Greek era, by the late 18th century the word had taken on the meaning common today: a work usually consisting of multiple distinct sections or movements, often four, with the first movement in sonata form. Symphonies are almost always scored for an orchestra consisting of a string section (violin, viola, cello, and double bass), brass, woodwind, and percussion instruments which altogether number about 30 to 100 musicians. Symphonies are notated in a musical score, which contains all the instrument parts. Orchestral musicians play from parts which contain just the notated music for their own instrument. Some symphonies also contain vocal parts (e.g., Beethoven&apos;s Ninth Symphony). (en)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Symphony genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Villancico -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Villancico">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The villancico (Spanish, pronounced [biʎanˈθiko]) or vilancete (Portuguese, pronounced [vi.lɐ̃ˈse.t(ɨ)]) was a common poetic and musical form of the Iberian Peninsula and Latin America popular from the late 15th to 18th centuries. With the decline in popularity of the villancicos in the 20th century, the term became reduced to mean merely &quot;Christmas carol&quot;. Important composers of villancicos were Juan del Encina, Pedro de Escobar, Francisco Guerrero, Manuel de Zumaya, Juana Inés de la Cruz, Gaspar Fernandes, and Juan Gutiérrez de Padilla.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Villancico genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Viola -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Viola">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Violin -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Violin">
+        <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Agnus_Dei_(music) -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Agnus_Dei_(music)">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agnus Dei is the Latin name under which the &quot;Lamb of God&quot; is honoured within the Roman Catholic Mass and, by extension, other Christian liturgies descending from the Latin tradition. It is the name given to a specific prayer that occurs in these liturgies, and is the name given to the music pieces that accompany the text of this prayer. The use of the title &quot;Lamb of God&quot; in liturgy is based on John 1:29, in which St. John the Baptist, upon seeing Jesus, proclaims &quot;Behold, the Lamb of God, who takes away the sin of the world!&quot;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agnus dei genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fr.dbpedia.org/resource/Cantate_chorale -->
+
+    <owl:NamedIndividual rdf:about="http://fr.dbpedia.org/resource/Cantate_chorale">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:comment xml:lang="en">In music, a chorale cantata is a sacred composition for voices and instruments, principally from the German Baroque era, in which the organizing principle is the words and music to a chorale. Usually a chorale cantata is in multiple movements or parts. Most chorale cantatas were written between approximately 1650 and 1750. By far the most famous are by J. S. Bach, especially the cantatas composed in his second annual cycle of cantatas, started in Leipzig in 1724.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://fr.dbpedia.org/resource/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cantate chorale genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://viaf.org/viaf/143061561 -->
+
+    <owl:NamedIndividual rdf:about="http://viaf.org/viaf/143061561">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Place"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://viaf.org/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salzburg</rdfs:label>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salzburg</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Cadences_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Cadences_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cadences schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Cantus_firmus_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Cantus_firmus_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cantus Firmus schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Contrapuntal_Duo_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Contrapuntal_Duo_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contrapuntal Duo schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Countersubject_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Countersubject_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Counter-subject schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Fuga_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Fuga_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuga schema</rdfs:label>
+        <skos:prefLabel xml:lang="en">Fuga</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Homorhythm_Dialogue_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Dialogue_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Dialogue schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Homorhythm_Fauxbourdon_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Fauxbourdon_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Fauxbourdon schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Homorhythm_Sequential_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Sequential_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Sequential schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Homorhythm_Staggered_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Staggered_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Staggered schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Homorhythm_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Imitative_Duos_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Imitative_Duos_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imitative Duos schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Interval_Patterns_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Interval_Patterns_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interval Patterns schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Magnificat_genre -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Magnificat_genre">
+        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magnificat genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Non-Imitative_Duos_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Non-Imitative_Duos_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-Imitative Duos schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Periodic_Entries_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Periodic_Entries_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Periodic Entries schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#Soggetto_schema -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#Soggetto_schema">
+        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soggetto schema</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#test-music-part -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#test-music-part">
+        <rdf:type rdf:resource="http://www.omac.org#MusicalWorkPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#test-work -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#test-work">
+        <rdf:type rdf:resource="http://www.omac.org#MusicalWork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#0-credo -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#0-credo">
+        <rdf:type rdf:resource="http://www.omac.org#MusicalSection"/>
+        <has_expression rdf:resource="http://www.omac.org#0-credo_score"/>
+        <section_of rdf:resource="http://www.omac.org#1-missa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#0-credo_score -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#0-credo_score">
+        <rdf:type rdf:resource="http://www.omac.org#Score"/>
+        <part_of rdf:resource="http://www.omac.org#1-missa-score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#0-seg -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#0-seg">
+        <rdf:type rdf:resource="http://www.omac.org#AnalyticSegment"/>
+        <segment_of rdf:resource="http://www.omac.org#0-credo_score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#1-missa -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#1-missa">
+        <rdf:type rdf:resource="http://www.omac.org#MusicalWork"/>
+        <has_expression rdf:resource="http://www.omac.org#1-missa-score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#1-missa-score -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#1-missa-score"/>
+    
+
+
+    <!-- http://www.omac.org#3-obs -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#3-obs">
+        <rdf:type rdf:resource="http://www.omac.org#StructureObservation"/>
+        <concerns rdf:resource="http://www.omac.org#0-credo_score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#4-tota -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#4-tota">
+        <rdf:type rdf:resource="http://www.omac.org#MusicalWork"/>
+        <has_expression rdf:resource="http://www.omac.org#4-tota-score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#4-tota-score -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#4-tota-score"/>
+    
+
+
+    <!-- http://www.omac.org#5-obs_rel -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#5-obs_rel">
+        <rdf:type rdf:resource="http://www.omac.org#SimilarityObservation"/>
+        <has_derivative rdf:resource="http://www.omac.org#0-credo_score"/>
+        <has_model rdf:resource="http://www.omac.org#4-tota-score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.omac.org#6-composer -->
+
+    <owl:NamedIndividual rdf:about="http://www.omac.org#6-composer">
+        <dbp:composer rdf:resource="http://www.omac.org#1-missa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+            <rdf:Description rdf:about="http://www.omac.org#Attribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#AttributeValue"/>
+            <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+            <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+            <rdf:Description rdf:about="http://www.omac.org#Observation"/>
+            <rdf:Description rdf:about="http://www.omac.org#PerformingForceType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#GenreAttribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#KeyAttribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#PerformingForceAttribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#SchemaAttribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#StyleAttribute"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.omac.org#GenreValue"/>
+            <rdf:Description rdf:about="http://www.omac.org#KeyValue"/>
+            <rdf:Description rdf:about="http://www.omac.org#SchemaValue"/>
+            <rdf:Description rdf:about="http://www.omac.org#StyleValue"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#w1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#w2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to derive model-for at the work-level</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1 - model for derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.omac.org#model_for"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.omac.org#expression_of"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#w1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.omac.org#expression_of"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#w2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.omac.org#model_for"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#w1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#w2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
