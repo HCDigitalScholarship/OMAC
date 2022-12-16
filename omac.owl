@@ -311,9 +311,9 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="http://www.omac.org#has_analytic_segment">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_part"/>
         <owl:inverseOf rdf:resource="http://www.omac.org#segment_of"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
-        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has analytic segment</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has segment</rdfs:label>
+        <skos:altLabel xml:lang="en">has analytic segment</skos:altLabel>
+        <skos:prefLabel xml:lang="en">has segment</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -627,9 +627,9 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#segment_of">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#part_of"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
-        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">analytic segment of</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">segment of</rdfs:label>
+        <skos:altLabel xml:lang="en">analytic segment of</skos:altLabel>
+        <skos:prefLabel xml:lang="en">segment of</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -735,6 +735,17 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://dbpedia.org/property/fullTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/fullTitle">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the specific context of CRIM, to represent the full title of a resource.
+If the CRIM&apos;s database includes title only (hence, no full title), dcterms:title is to be used</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">full title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://dbpedia.org/property/name -->
 
     <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/name">
@@ -753,6 +764,16 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
         <rdfs:isDefinedBy xml:lang="en">http://dbpedia.org/</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL</rdfs:label>
         <skos:prefLabel xml:lang="en">URL</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">created</rdfs:label>
+        <skos:prefLabel xml:lang="en">created</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -795,6 +816,14 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
 https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">double or invertible counterpoint</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#ema -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#ema">
+        <rdfs:comment>Relationship used in CRIM to refer to EMA code</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -859,6 +888,15 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
 https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">invertible</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#mei_link -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#mei_link">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific relationship in the context of the CRIM project to retrieve the MEI file of the resource</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mei link</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -969,6 +1007,15 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
         <skos:altLabel xml:lang="en">order</skos:altLabel>
         <skos:definition xml:lang="en">The relation is used to represent the order of an authorial part (i.e., section or subsection) in a musical work. For example, a section of genre Kyrie is the first part of masses</skos:definition>
         <skos:prefLabel xml:lang="en">authorial part order</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.omac.org#pdf_link -->
+
+    <owl:DatatypeProperty rdf:about="http://www.omac.org#pdf_link">
+        <rdfs:comment>Specific relationship in the context of the CRIM project to retrieve the PDF file of the resource</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pdf link</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1157,13 +1204,7 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
     <!-- http://www.omac.org#AnalyticSegment -->
 
     <owl:Class rdf:about="http://www.omac.org#AnalyticSegment">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#Expression"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#segment_of"/>
-                <owl:someValuesFrom rdf:resource="http://www.omac.org#Score"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analytic segment is a pattern of a musical work or musical work part identified by an analyst. It is not therefore an authorial part of a musical work</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analytic Segment</rdfs:label>
         <skos:prefLabel xml:lang="en">Analytic Segment</skos:prefLabel>
@@ -1477,8 +1518,8 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The notion of Musical Work Part is based on the authorial division of a musical composition in different parts as given by composers and identified in scores through, e.g., formal divisions.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Musical Work Part</rdfs:label>
-        <skos:prefLabel xml:lang="en">Musical Work Part</skos:prefLabel>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Musical Work Authorial Part</rdfs:label>
+        <skos:prefLabel xml:lang="en">Musical Work Authorial Part</skos:prefLabel>
     </owl:Class>
     
 
@@ -1945,52 +1986,10 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- http://dbpedia.org/resource/Baroque_music -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Baroque_music">
-        <rdf:type rdf:resource="http://www.omac.org#StyleValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baroque music (UK: /bəˈrɒk/ or US: /bəˈroʊk/) is a period or style of Western classical music composed from approximately 1600 to 1750. This era followed the Renaissance music era, and was followed in turn by the Classical era, with the galant style marking the transition between Baroque and Classical eras. The Baroque period is divided into three major phases: early, middle, and late. Overlapping in time, they are conventionally dated from 1580 to 1650, from 1630 to 1700, and from 1680 to 1750. Baroque music forms a major portion of the &quot;classical music&quot; canon, and is now widely studied, performed, and listened to. The term &quot;baroque&quot; comes from the Portuguese word barroco, meaning &quot;misshapen pearl&quot;. Key composers of the Baroque era include Johann Sebastian Bach, Antonio Vivaldi, George Fr</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baroque music style</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://dbpedia.org/resource/Cello -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cello">
         <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Chamber_music -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Chamber_music">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chamber music is a form of classical music that is composed for a small group of instruments—traditionally a group that could fit in a palace chamber or a large room. Most broadly, it includes any art music that is performed by a small number of performers, with one performer to a part (in contrast to orchestral music, in which each string part is played by a number of performers). However, by convention, it usually does not include solo instrument performances.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chamber music genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Credo -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Credo">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment xml:lang="en">In Christian liturgy, the credo (Latin: [ˈkɾeːdoː]; Latin for &quot;I believe&quot;) is the Nicene-Constantinopolitan Creed – or its shorter and nowadays more used version, the Apostles&apos; Creed – in the Mass, either as a prayer, a spoken text, or sung as Gregorian chant or other musical settings of the Mass.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Credo genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/D_major -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/D_major">
-        <rdf:type rdf:resource="http://www.omac.org#KeyValue"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
     </owl:NamedIndividual>
     
@@ -2001,60 +2000,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Flute">
         <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/G_minor -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/G_minor">
-        <rdf:type rdf:resource="http://www.omac.org#KeyValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G minor is a minor scale based on G, consisting of the pitches G, A, B♭, C, D, E♭, and F. Its key signature has two flats. Its relative major is B-flat major and its parallel major is G major. The G natural minor scale is: Changes needed for the melodic and harmonic versions of the scale are written in with accidentals as necessary (source DBPedia)</rdfs:comment>
-        <rdfs:isDefinedBy>http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G minor</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Gloria -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Gloria">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gloria genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Hymn -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Hymn">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hymn is a type of song, usually religious, specifically written for the purpose of adoration or prayer, and typically addressed to a deity or deities, or to a prominent figure or personification. The word hymn derives from Greek ὕμνος (hymnos), which means &quot;a song of praise&quot;. A writer of hymns is known as a hymnist. The singing or composition of hymns is called hymnody. Collections of hymns are known as hymnals or hymn books. Hymns may or may not include instrumental accompaniment.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Hymn</rdfs:isDefinedBy>
-        <rdfs:label>Hymn genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Kyrie -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Kyrie">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kyrie, a transliteration of Greek Κύριε, vocative case of Κύριος (Kyrios), is a common name of an important prayer of Christian liturgy, also called the Kyrie eleison (/ˈkɪəri.eɪ ɪˈleɪ.ɪsɒn, -sən/ KEER-ee-ay il-AY-iss-on, -⁠ən; Ancient Greek: Κύριε, ἐλέησον, romanized: Kýrie eléēson, lit. &apos;Lord, have mercy&apos;).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kyrie genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Medieval_music -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Medieval_music">
-        <rdf:type rdf:resource="http://www.omac.org#StyleValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medieval music encompasses the sacred and secular music of the Western Europe during the Middle Ages, from approximately the 6th to 15th centuries. It is the first and longest era of Western classical music and followed by the Renaissance music; the two eras comprise what musicologists term as early music, preceding the common practice period. Following the traditional divisions of the Middle Ages, medieval music can be divided into , , and medieval music.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medieval music style</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2086,50 +2031,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- http://dbpedia.org/resource/Renaissance_music -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Renaissance_music">
-        <rdf:type rdf:resource="http://www.omac.org#StyleValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Renaissance music is vocal and instrumental music written and performed in Europe during the Renaissance era. Consensus among music historians has been to start the era around 1400, with the end of the medieval era, and to close it around 1600, with the beginning of the Baroque period, therefore commencing the musical Renaissance about a hundred years after the beginning of the Renaissance as it is understood in other disciplines.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Renaissance music style</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Sanctus -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Sanctus">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Sanctus (Latin: Sanctus, &quot;Holy&quot;) is a hymn in Christian liturgy. It may also be called the epinikios hymnos (Greek: ἐπινίκιος ὕμνος, &quot;Hymn of Victory&quot;) when referring to the Greek rendition. In Western Christianity, the Sanctus forms part of the Ordinary and is sung (or said) as the final words of the Preface of the Eucharistic Prayer of remembrance, consecration, and praise. The preface, which alters according to the season, usually concludes with words describing the praise of the worshippers joining with the angels, who are pictured as praising God with the words of the Sanctus.In the Byzantine Rite and general Eastern Orthodox Christianity, the Sanctus is offered as a response by the choir during the Holy Anaphora.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sanctus genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Symphony -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Symphony">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A symphony is an extended musical composition in Western classical music, written by composers, most often for orchestra. Although the term has had many meanings from its origins in the ancient Greek era, by the late 18th century the word had taken on the meaning common today: a work usually consisting of multiple distinct sections or movements, often four, with the first movement in sonata form. Symphonies are almost always scored for an orchestra consisting of a string section (violin, viola, cello, and double bass), brass, woodwind, and percussion instruments which altogether number about 30 to 100 musicians. Symphonies are notated in a musical score, which contains all the instrument parts. Orchestral musicians play from parts which contain just the notated music for their own instrument. Some symphonies also contain vocal parts (e.g., Beethoven&apos;s Ninth Symphony). (en)</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Symphony genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Villancico -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Villancico">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The villancico (Spanish, pronounced [biʎanˈθiko]) or vilancete (Portuguese, pronounced [vi.lɐ̃ˈse.t(ɨ)]) was a common poetic and musical form of the Iberian Peninsula and Latin America popular from the late 15th to 18th centuries. With the decline in popularity of the villancicos in the 20th century, the term became reduced to mean merely &quot;Christmas carol&quot;. Important composers of villancicos were Juan del Encina, Pedro de Escobar, Francisco Guerrero, Manuel de Zumaya, Juana Inés de la Cruz, Gaspar Fernandes, and Juan Gutiérrez de Padilla.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Villancico genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://dbpedia.org/resource/Viola -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Viola">
@@ -2144,300 +2045,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Violin">
         <rdf:type rdf:resource="http://www.omac.org#PerformingForceType"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://dbpedia.org/resource/Agnus_Dei_(music) -->
-
-    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Agnus_Dei_(music)">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agnus Dei is the Latin name under which the &quot;Lamb of God&quot; is honoured within the Roman Catholic Mass and, by extension, other Christian liturgies descending from the Latin tradition. It is the name given to a specific prayer that occurs in these liturgies, and is the name given to the music pieces that accompany the text of this prayer. The use of the title &quot;Lamb of God&quot; in liturgy is based on John 1:29, in which St. John the Baptist, upon seeing Jesus, proclaims &quot;Behold, the Lamb of God, who takes away the sin of the world!&quot;</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agnus dei genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://fr.dbpedia.org/resource/Cantate_chorale -->
-
-    <owl:NamedIndividual rdf:about="http://fr.dbpedia.org/resource/Cantate_chorale">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:comment xml:lang="en">In music, a chorale cantata is a sacred composition for voices and instruments, principally from the German Baroque era, in which the organizing principle is the words and music to a chorale. Usually a chorale cantata is in multiple movements or parts. Most chorale cantatas were written between approximately 1650 and 1750. By far the most famous are by J. S. Bach, especially the cantatas composed in his second annual cycle of cantatas, started in Leipzig in 1724.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://fr.dbpedia.org/resource/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cantate chorale genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://viaf.org/viaf/143061561 -->
-
-    <owl:NamedIndividual rdf:about="http://viaf.org/viaf/143061561">
-        <rdf:type rdf:resource="http://dbpedia.org/ontology/Place"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://viaf.org/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salzburg</rdfs:label>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salzburg</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Cadences_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Cadences_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cadences schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Cantus_firmus_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Cantus_firmus_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cantus Firmus schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Contrapuntal_Duo_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Contrapuntal_Duo_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contrapuntal Duo schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Countersubject_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Countersubject_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Counter-subject schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Fuga_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Fuga_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuga schema</rdfs:label>
-        <skos:prefLabel xml:lang="en">Fuga</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Homorhythm_Dialogue_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Dialogue_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Dialogue schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Homorhythm_Fauxbourdon_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Fauxbourdon_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Fauxbourdon schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Homorhythm_Sequential_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Sequential_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Sequential schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Homorhythm_Staggered_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_Staggered_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm Staggered schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Homorhythm_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Homorhythm_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homorhythm schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Imitative_Duos_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Imitative_Duos_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imitative Duos schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Interval_Patterns_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Interval_Patterns_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interval Patterns schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Magnificat_genre -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Magnificat_genre">
-        <rdf:type rdf:resource="http://www.omac.org#GenreValue"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magnificat genre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Non-Imitative_Duos_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Non-Imitative_Duos_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-Imitative Duos schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Periodic_Entries_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Periodic_Entries_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Periodic Entries schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#Soggetto_schema -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#Soggetto_schema">
-        <rdf:type rdf:resource="http://www.omac.org#SchemaValue"/>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/musical-types</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soggetto schema</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#test-music-part -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#test-music-part">
-        <rdf:type rdf:resource="http://www.omac.org#MusicalWorkPart"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#test-work -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#test-work">
-        <rdf:type rdf:resource="http://www.omac.org#MusicalWork"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#0-credo -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#0-credo">
-        <rdf:type rdf:resource="http://www.omac.org#MusicalSection"/>
-        <has_expression rdf:resource="http://www.omac.org#0-credo_score"/>
-        <section_of rdf:resource="http://www.omac.org#1-missa"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#0-credo_score -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#0-credo_score">
-        <rdf:type rdf:resource="http://www.omac.org#Score"/>
-        <part_of rdf:resource="http://www.omac.org#1-missa-score"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#0-seg -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#0-seg">
-        <rdf:type rdf:resource="http://www.omac.org#AnalyticSegment"/>
-        <segment_of rdf:resource="http://www.omac.org#0-credo_score"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#1-missa -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#1-missa">
-        <rdf:type rdf:resource="http://www.omac.org#MusicalWork"/>
-        <has_expression rdf:resource="http://www.omac.org#1-missa-score"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#1-missa-score -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#1-missa-score"/>
-    
-
-
-    <!-- http://www.omac.org#3-obs -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#3-obs">
-        <rdf:type rdf:resource="http://www.omac.org#StructureObservation"/>
-        <concerns rdf:resource="http://www.omac.org#0-credo_score"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#4-tota -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#4-tota">
-        <rdf:type rdf:resource="http://www.omac.org#MusicalWork"/>
-        <has_expression rdf:resource="http://www.omac.org#4-tota-score"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#4-tota-score -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#4-tota-score"/>
-    
-
-
-    <!-- http://www.omac.org#5-obs_rel -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#5-obs_rel">
-        <rdf:type rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <has_derivative rdf:resource="http://www.omac.org#0-credo_score"/>
-        <has_model rdf:resource="http://www.omac.org#4-tota-score"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.omac.org#6-composer -->
-
-    <owl:NamedIndividual rdf:about="http://www.omac.org#6-composer">
-        <dbp:composer rdf:resource="http://www.omac.org#1-missa"/>
     </owl:NamedIndividual>
     
 
