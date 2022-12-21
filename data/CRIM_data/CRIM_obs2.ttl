@@ -1,4 +1,3 @@
-@prefix od: <http://www.omac.org/data#>.
 @prefix om: <http://www.omac.org#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
@@ -6,43 +5,41 @@
 @prefix viaf: <http://viaf.org/viaf/>.
 @prefix dcterms: <http://purl.org/dc/terms/>.
 
-viaf:89469141 dbp:name "Claudin de Sermisy"^^xsd:string.
+om:CRIM_Person_0021
+  om:viaf_identifier "http://viaf.org/viaf/89469141"^^xsd:anyURI;
+  dbp:name "Claudin de Sermisy"^^xsd:string.
 
-viaf:180445237
+
+om:CRIM_Mass_0009
   rdf:type om:MusicalWork;
   dcterms:title "Missa tota pulchra es"^^xsd:string;
-  om:composed_by viaf:89469141;
-  om:has_expression od:180445237_score.
+  om:composed_by om:CRIM_Person_0021;
+  om:viaf_identifier "http://viaf.org/viaf/180445237"^^xsd:anyURI.
 
-od:Credo_180445237
+om:CRIM_Mass_0009_3
     rdf:type om:MusicalSection;
-    om:section_of viaf:180445237;
     dcterms:title "Missa tota pulchra es:Credo"^^xsd:string;
-    om:has_expression od:Credo_180445237_score.
+    om:section_of om:CRIM_Mass_0009.
 
-od:180445237_score
-  rdf:type om:Score.
-
-od:Credo_180445237_score
-  rdf:type om:Score;
-  om:part_of od:180445237_score.
-
-od:obs_P2
+om:obs2
      rdf:type om:StructureClaim;
-     om:observed_by od:Ian_Lorenz;
-     om:concerns od:seg_P2;
-     om:has_schema om:Fuga_schema;
-     om:melodic_interval_of_entry "4-"^^xsd:string;
+     om:observed_by om:Ian_Lorenz.;
+     om:concerns om:seg2;
+     om:has_schema om:obs2_schema;
+     om:melomic_interval_of_entry "4-"^^xsd:string;
      om:time_interval_of_entry "B2"^^xsd:string;
-     om:periodic "false"^^xsd:boolean;
+     om:periomic "false"^^xsd:boolean;
      om:strict "false"^^xsd:boolean;
      om:flexed "false"^^xsd:boolean;
      om:sequential "false"^^xsd:boolean;
      om:inverted "false"^^xsd:boolean;
      om:retrograde "false"^^xsd:boolean;
-     om:remarks "Makes up a longer ID"^^xsd:string;
-     dbp:url "https://crimproject.org/observations/2/"^^xsd:anyURI.
+     om:remarks "Makes up a longer ID"^^xsd:string.
 
-od:seg_P2
+om:obs2_schema
+rdf:type om:SchemaAttribute;
+om:has_value om:Fuga.
+
+om:seg2
   rdf:type om:AnalyticSegment;
-  om:segment_of od:Credo_180445237_score.
+  om:segment_of om:CRIM_Mass_0009_3.
