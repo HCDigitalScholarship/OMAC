@@ -20,7 +20,6 @@
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emilio M. Sanfilippo, Laboratory for Applied Ontology, ISTC-CNR, Italy
 Richard Freedman, Haverford College, USA</dcterms:creator>
         <dcterms:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Music and Musicology</dcterms:subject>
-        <owl:versionInfo>under development. This version covers both works and observations</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -160,7 +159,6 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="http://dbpedia.org/property/genre">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:range rdf:resource="http://www.omac.org#GenreAttribute"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has genre</rdfs:label>
@@ -173,7 +171,6 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="http://dbpedia.org/property/key">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:range rdf:resource="http://www.omac.org#KeyAttribute"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has key</rdfs:label>
@@ -236,10 +233,20 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://www.omac.org#concerned_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#concerned_by">
+        <owl:inverseOf rdf:resource="http://www.omac.org#concerns"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Observation"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concerned by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.omac.org#concerns -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#concerns">
-        <owl:inverseOf rdf:resource="http://www.omac.org#related_to"/>
         <rdfs:domain rdf:resource="http://www.omac.org#Observation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -259,9 +266,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- http://www.omac.org#derivative_in -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#derivative_in">
-        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#related_to"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#concerned_by"/>
         <owl:inverseOf rdf:resource="http://www.omac.org#has_derivative"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
         <rdfs:range rdf:resource="http://www.omac.org#SimilarityObservation"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derivative in</rdfs:label>
         <skos:prefLabel xml:lang="en">derivative in</skos:prefLabel>
@@ -273,22 +279,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#derivative_of">
         <owl:inverseOf rdf:resource="http://www.omac.org#model_for"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
-                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
-                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derivative of</rdfs:label>
         <skos:prefLabel xml:lang="en">derivative of</skos:prefLabel>
     </owl:ObjectProperty>
@@ -354,7 +346,6 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="http://www.omac.org#has_derivative">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#concerns"/>
         <rdfs:domain rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has derivative</rdfs:label>
         <skos:prefLabel xml:lang="en">has derivative</skos:prefLabel>
     </owl:ObjectProperty>
@@ -372,13 +363,29 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://www.omac.org#has_file -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_file">
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/File"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has file</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.omac.org#has_mei -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_mei">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_file"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.omac.org#has_model -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#has_model">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#concerns"/>
         <owl:inverseOf rdf:resource="http://www.omac.org#model_in"/>
         <rdfs:domain rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <rdfs:range rdf:resource="http://www.omac.org#Expression"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has model</rdfs:label>
         <skos:prefLabel xml:lang="en">has model</skos:prefLabel>
     </owl:ObjectProperty>
@@ -399,6 +406,14 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://www.omac.org#has_pdf -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_pdf">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_file"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.omac.org#has_performing_force_type -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#has_performing_force_type">
@@ -410,19 +425,20 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://www.omac.org#has_role -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_role">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.omac.org#Role"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.omac.org#has_schema -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#has_schema">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
-                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
-                    <rdf:Description rdf:about="http://www.omac.org#Observation"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.omac.org#SchemaAttribute"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has schema</rdfs:label>
     </owl:ObjectProperty>
@@ -457,11 +473,20 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://www.omac.org#has_similarity -->
+
+    <owl:ObjectProperty rdf:about="http://www.omac.org#has_similarity">
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
+        <rdfs:range rdf:resource="http://www.omac.org#SimilarityAttribute"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has similarity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.omac.org#has_style -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#has_style">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:range rdf:resource="http://www.omac.org#StyleAttribute"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has style</rdfs:label>
         <skos:prefLabel xml:lang="en">has style</skos:prefLabel>
@@ -501,22 +526,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- http://www.omac.org#model_for -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#model_for">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
-                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.omac.org#Expression"/>
-                    <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
+        <rdfs:range rdf:resource="http://www.omac.org#MusicalEntity"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.omac.org#model_in"/>
             <rdf:Description rdf:about="http://www.omac.org#has_derivative"/>
@@ -530,8 +541,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- http://www.omac.org#model_in -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#model_in">
-        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#related_to"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#Expression"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.omac.org#concerned_by"/>
         <rdfs:range rdf:resource="http://www.omac.org#SimilarityObservation"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model in</rdfs:label>
         <skos:prefLabel xml:lang="en">model in</skos:prefLabel>
@@ -571,22 +581,11 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
-    <!-- http://www.omac.org#related_to -->
-
-    <owl:ObjectProperty rdf:about="http://www.omac.org#related_to">
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://www.omac.org#Observation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">related to</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.omac.org#scored_for -->
 
     <owl:ObjectProperty rdf:about="http://www.omac.org#scored_for">
         <rdfs:subPropertyOf rdf:resource="http://www.omac.org#has_attribute"/>
         <owl:inverseOf rdf:resource="http://www.omac.org#scoring_of"/>
-        <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:range rdf:resource="http://www.omac.org#PerformingForceAttribute"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scored for</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation is used to link a musical entity to its performing force attribute</skos:definition>
@@ -689,9 +688,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/composed">
         <rdfs:domain rdf:resource="http://www.omac.org#MusicalEntity"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed</rdfs:label>
+        <rdfs:label xml:lang="en">composition date</rdfs:label>
         <skos:altLabel xml:lang="en">composed</skos:altLabel>
-        <skos:prefLabel xml:lang="en">composition date</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -789,16 +787,6 @@ If the CRIM&apos;s database includes title only (hence, no full title), dcterms:
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</rdfs:label>
         <skos:prefLabel xml:lang="en">title</skos:prefLabel>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.omac.org#CRIM_identifier -->
-
-    <owl:DatatypeProperty rdf:about="http://www.omac.org#CRIM_identifier">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRIM identifier</rdfs:label>
-        <skos:definition xml:lang="en">Identifier specific within the scope of the CRIM project</skos:definition>
-        <skos:prefLabel xml:lang="en">CRIM identifier</skos:prefLabel>
     </owl:DatatypeProperty>
     
 
@@ -1155,10 +1143,11 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
     
 
 
-    <!-- http://www.omac.org#viaf_identifier -->
+    <!-- https://www.wikidata.org/wiki/Property:P214 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.omac.org#viaf_identifier">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <owl:DatatypeProperty rdf:about="https://www.wikidata.org/wiki/Property:P214">
+        <rdfs:isDefinedBy>Wikidata</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VIAF ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1171,6 +1160,16 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://dbpedia.org/ontology/File -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/File">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/ontology/</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">File</rdfs:label>
+        <skos:prefLabel xml:lang="en">File</skos:prefLabel>
+    </owl:Class>
     
 
 
@@ -1242,7 +1241,7 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analytic segment is a pattern of a musical work or musical work part identified by an analyst. It is not therefore an authorial part of a musical work</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analytic segment is a pattern of a musical work or musical work part identified by an analyst. It is not therefore an *authorial part* of a musical work</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analytic Segment</rdfs:label>
         <skos:prefLabel xml:lang="en">Analytic Segment</skos:prefLabel>
     </owl:Class>
@@ -1305,9 +1304,16 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A person who composes an authorial musical work</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Example of person in the role of composer. Hereby for testing purposes</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Composer</rdfs:label>
         <skos:prefLabel xml:lang="en">Composer</skos:prefLabel>
     </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#EntityType -->
+
+    <owl:Class rdf:about="http://www.omac.org#EntityType"/>
     
 
 
@@ -1329,6 +1335,7 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
         <rdfs:comment>An expression is an abstract (and complex) pattern of characters in a certain notation (e.g., natural language, musical notes, etc)
 
 It is not the specific material pattern of ink printed in a book</rdfs:comment>
+        <rdfs:comment>Hereby included for further development; not used at the current state</rdfs:comment>
         <rdfs:comment>To be possibly aligned with LRM</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expression</rdfs:label>
         <skos:prefLabel xml:lang="en">Expression</skos:prefLabel>
@@ -1402,15 +1409,6 @@ It is not the specific material pattern of ink printed in a book</rdfs:comment>
     
 
 
-    <!-- http://www.omac.org#MechanicalTransformation -->
-
-    <owl:Class rdf:about="http://www.omac.org#MechanicalTransformation">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#Transformation"/>
-        <skos:altLabel xml:lang="en">Mechanical Transformation Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
     <!-- http://www.omac.org#MusicalEntity -->
 
     <owl:Class rdf:about="http://www.omac.org#MusicalEntity">
@@ -1424,12 +1422,6 @@ It is not the specific material pattern of ink printed in a book</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.omac.org#has_attribute"/>
                 <owl:someValuesFrom rdf:resource="http://www.omac.org#Attribute"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#has_expression"/>
-                <owl:someValuesFrom rdf:resource="http://www.omac.org#Score"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1589,24 +1581,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- http://www.omac.org#NewMaterial -->
-
-    <owl:Class rdf:about="http://www.omac.org#NewMaterial">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <skos:altLabel xml:lang="en">New Material Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#NonMechanicalTransformation -->
-
-    <owl:Class rdf:about="http://www.omac.org#NonMechanicalTransformation">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#Transformation"/>
-        <skos:altLabel xml:lang="en">Non-Mechanical Transformation Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
     <!-- http://www.omac.org#Observation -->
 
     <owl:Class rdf:about="http://www.omac.org#Observation">
@@ -1661,15 +1635,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- http://www.omac.org#Omission -->
-
-    <owl:Class rdf:about="http://www.omac.org#Omission">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <skos:altLabel xml:lang="en">Omission Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
     <!-- http://www.omac.org#PerformingForceAttribute -->
 
     <owl:Class rdf:about="http://www.omac.org#PerformingForceAttribute">
@@ -1696,35 +1661,18 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     <!-- http://www.omac.org#PerformingForceType -->
 
     <owl:Class rdf:about="http://www.omac.org#PerformingForceType">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#EntityType"/>
+        <owl:disjointWith rdf:resource="http://www.omac.org#Role"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performing Force Type</rdfs:label>
         <skos:prefLabel xml:lang="en">Performing Force Type</skos:prefLabel>
     </owl:Class>
     
 
 
-    <!-- http://www.omac.org#Quotation -->
+    <!-- http://www.omac.org#Role -->
 
-    <owl:Class rdf:about="http://www.omac.org#Quotation">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <skos:altLabel xml:lang="en">Quotation Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#QuotationExact -->
-
-    <owl:Class rdf:about="http://www.omac.org#QuotationExact">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#Quotation"/>
-        <skos:altLabel xml:lang="en">Quotation Exact Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#QuotationMonnayage -->
-
-    <owl:Class rdf:about="http://www.omac.org#QuotationMonnayage">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#Quotation"/>
-        <skos:altLabel xml:lang="en">Quotation Monnayage Claim</skos:altLabel>
+    <owl:Class rdf:about="http://www.omac.org#Role">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#EntityType"/>
     </owl:Class>
     
 
@@ -1761,48 +1709,26 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- http://www.omac.org#Score -->
+    <!-- http://www.omac.org#SimilarityAttribute -->
 
-    <owl:Class rdf:about="http://www.omac.org#Score">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#Expression"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Score</rdfs:label>
-        <skos:prefLabel xml:lang="en">Score</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#SelfEnchainment -->
-
-    <owl:Class rdf:about="http://www.omac.org#SelfEnchainment">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SelfRelationship"/>
-        <skos:altLabel xml:lang="en">Self Enchainment Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#SelfRelationship -->
-
-    <owl:Class rdf:about="http://www.omac.org#SelfRelationship">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <skos:altLabel xml:lang="en">Selfrelationship Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#SelfRepetition -->
-
-    <owl:Class rdf:about="http://www.omac.org#SelfRepetition">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SelfRelationship"/>
-        <skos:altLabel xml:lang="en">Self Repetition Claim</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#SelfReturn -->
-
-    <owl:Class rdf:about="http://www.omac.org#SelfReturn">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SelfRelationship"/>
-        <skos:altLabel xml:lang="en">Self Return Claim</skos:altLabel>
+    <owl:Class rdf:about="http://www.omac.org#SimilarityAttribute">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#SimilarityValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_value"/>
+                <owl:allValuesFrom rdf:resource="http://www.omac.org#SimilarityValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Used in CRIM to retrieve the type of similarity relationship</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity</rdfs:label>
+        <skos:altLabel xml:lang="en">Similarity relationship attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Similarity</skos:prefLabel>
     </owl:Class>
     
 
@@ -1814,115 +1740,35 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.omac.org#has_derivative"/>
-                <owl:someValuesFrom rdf:resource="http://www.omac.org#Expression"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalEntity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.omac.org#has_model"/>
-                <owl:someValuesFrom rdf:resource="http://www.omac.org#Expression"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#MusicalEntity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#amplified"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#double_or_invertible_counterpoint"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#embellished"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#exact"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#melodically_inverted"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#metrically_shifted"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#monnayage"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#new_combination"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#new_counter_subject"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#old_counter_subject_shifted_metrically"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#old_counter_subject_transposed"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#reduced"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#retrograde"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#sounding_in_different_voices"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#transposed"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#truncated"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+                <owl:onProperty rdf:resource="http://www.omac.org#has_similarity"/>
+                <owl:someValuesFrom rdf:resource="http://www.omac.org#SimilarityAttribute"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In sense of the terminology specific to the CRIM project, a claim of similarity between musical entities. All object- and data-properties used to characterize this class are imported from the CRIM&apos;s vocabulary</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://sites.google.com/haverford.edu/crim-project/vocabularies/relationship-types</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity Observation</rdfs:label>
         <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity Observation</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.omac.org#SimilarityValue -->
+
+    <owl:Class rdf:about="http://www.omac.org#SimilarityValue">
+        <rdfs:subClassOf rdf:resource="http://www.omac.org#AttributeValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Similarity Value</skos:prefLabel>
     </owl:Class>
     
 
@@ -1941,54 +1787,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.omac.org#has_schema"/>
                 <owl:someValuesFrom rdf:resource="http://www.omac.org#SchemaAttribute"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#flexed"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#inverted"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#melodic_interval_of_entry"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#periodic"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#retrograde"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#sequential"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#strict"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.omac.org#time_interval_of_entry"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In sense of the terminology specific to the CRIM project, an observation about the structure of an analytic segment (e.g., observing that the segment is a fuga with certain characteristics). All object- and data-properties used to characterize this class are defined in the scope of the CRIM&apos;s vocabulary</rdfs:comment>
@@ -2027,15 +1825,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
         <rdfs:subClassOf rdf:resource="http://www.omac.org#AttributeValue"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Style Value</rdfs:label>
         <skos:prefLabel xml:lang="en">Style Value</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.omac.org#Transformation -->
-
-    <owl:Class rdf:about="http://www.omac.org#Transformation">
-        <rdfs:subClassOf rdf:resource="http://www.omac.org#SimilarityObservation"/>
-        <skos:altLabel xml:lang="en">Transformation Claim</skos:altLabel>
     </owl:Class>
     
 
@@ -2125,6 +1914,20 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/File"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
+            <rdf:Description rdf:about="http://www.omac.org#Attribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#AttributeValue"/>
+            <rdf:Description rdf:about="http://www.omac.org#EntityType"/>
+            <rdf:Description rdf:about="http://www.omac.org#Expression"/>
+            <rdf:Description rdf:about="http://www.omac.org#MusicalEntity"/>
+            <rdf:Description rdf:about="http://www.omac.org#Observation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
             <rdf:Description rdf:about="http://dbpedia.org/ontology/Place"/>
             <rdf:Description rdf:about="http://www.omac.org#Attribute"/>
@@ -2150,6 +1953,7 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
             <rdf:Description rdf:about="http://www.omac.org#KeyAttribute"/>
             <rdf:Description rdf:about="http://www.omac.org#PerformingForceAttribute"/>
             <rdf:Description rdf:about="http://www.omac.org#SchemaAttribute"/>
+            <rdf:Description rdf:about="http://www.omac.org#SimilarityAttribute"/>
             <rdf:Description rdf:about="http://www.omac.org#StyleAttribute"/>
         </owl:members>
     </rdf:Description>
