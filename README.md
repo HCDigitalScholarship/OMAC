@@ -6,7 +6,7 @@ Current research work aims at improving and testing OMAC against domain experts'
 ### Reference:
 * Sanfilippo, E. M., & Freedman, R. (2022). Ontology for Analytic Claims in Music. In European Conference on Advances in Databases and Information Systems (pp. 559-571). Springer, Cham.
 https://link.springer.com/chapter/10.1007/978-3-031-15743-1_51
-* See slides ([https://github.com/HCDigitalScholarship/OMAC/blob/main/SWODCH2022_OMAC.pdf](https://github.com/HCDigitalScholarship/OMAC/blob/main/OMAC_presentation_12_2022.pdf))
+* See slides ([https://github.com/HCDigitalScholarship/OMAC/blob/main/OMAC_presentation_04_2023.pdf](https://github.com/HCDigitalScholarship/OMAC/blob/main/OMAC_presentation_04_2023.pdf))
 
 ### For information, please write to:
 Emilio Sanfilippo, emilio.sanfilippo@cnr.it
