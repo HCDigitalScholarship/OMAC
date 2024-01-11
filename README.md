@@ -1,7 +1,8 @@
 # OMAC ontology
 The repository contains an OWL ontology, called OMAC - Ontology for Analytic Claims in Music, for musical critical assessments.
 
-Current research work aims at improving and testing OMAC against domain experts' knowledge and case studies. The data included in the owl file of the ontology are meant for testing purposes only. The Data folder show some examples based on OMAC.
+### SPARQL Endpoint
+The Endpoint is available at: https://lod.crimproject.org/. It allow accessing CRIM's data through the OnTop Virtual Knowledge Graph System (https://ontop-vkg.org/).
 
 ### Reference:
 * Sanfilippo, E. M., & Freedman, R. (2022). Ontology for Analytic Claims in Music. In European Conference on Advances in Databases and Information Systems (pp. 559-571). Springer, Cham.
