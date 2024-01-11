@@ -166,18 +166,11 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- http://www.w3.org/2004/02/skos/core#related -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:comment>A concept with which there is an associative semantic relationship.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/TR/swbp-skos-core-spec/</rdfs:isDefinedBy>
         <rdfs:label>related to</rdfs:label>
         <skos:prefLabel>related to</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://omac.crimproject.org/agree -->
-
-    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/agree">
-        <rdfs:comment>TESTING</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -361,17 +354,6 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
-    <!-- https://omac.crimproject.org/expressionOf -->
-
-    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/expressionOf">
-        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasExpression"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
-        <rdfs:label>expression of</rdfs:label>
-        <skos:prefLabel xml:lang="en">expression of</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://omac.crimproject.org/hasAttribute -->
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasAttribute">
@@ -403,16 +385,6 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
-    <!-- https://omac.crimproject.org/hasExpression -->
-
-    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasExpression">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
-        <rdfs:label>has expression</rdfs:label>
-        <skos:prefLabel xml:lang="en">has expression</skos:prefLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://omac.crimproject.org/hasFile -->
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasFile">
@@ -426,6 +398,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasMEI">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasFile"/>
+        <rdfs:label>has MEI file</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -434,6 +407,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasPDF">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasFile"/>
+        <rdfs:label>has PDF file</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -632,6 +606,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/rejects">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/observes"/>
+        <rdfs:label>rejects</rdfs:label>
+        <skos:prefLabel>rejects</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -1727,168 +1703,6 @@ It is not intended to be directly instantiated. We do not declare it as equivale
             <rdf:Description rdf:about="https://omac.crimproject.org/SchemaValue"/>
             <rdf:Description rdf:about="https://omac.crimproject.org/StyleValue"/>
         </owl:members>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Rules
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="urn:swrl:var#x">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#y">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#s">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#c">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#a">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#v">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://omac.crimproject.org/StructureObservation"/>
-                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://omac.crimproject.org/StructureObservation"/>
-                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/concernsSegment"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/concernsSegment"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
-                                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/segmentOf"/>
-                                                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
-                                                        <swrl:argument2 rdf:resource="urn:swrl:var#c"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/concernsAttribute"/>
-                                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
-                                                                <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/concernsAttribute"/>
-                                                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
-                                                                        <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                        <rdf:first>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/concernsAttributeValue"/>
-                                                                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
-                                                                                <swrl:argument2 rdf:resource="urn:swrl:var#v"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:first>
-                                                                        <rdf:rest>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                <rdf:first>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/concernsAttributeValue"/>
-                                                                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
-                                                                                        <swrl:argument2 rdf:resource="urn:swrl:var#v"/>
-                                                                                    </rdf:Description>
-                                                                                </rdf:first>
-                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:rest>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/agree"/>
-                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
     </rdf:Description>
 </rdf:RDF>
 
