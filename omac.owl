@@ -124,16 +124,16 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="http://dbpedia.org/property/composer">
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/composerOf"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:range rdf:resource="https://schema.org/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="https://omac.crimproject.org/authorialPartOf"/>
             <rdf:Description rdf:about="http://dbpedia.org/property/composer"/>
         </owl:propertyChainAxiom>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dbpedia.org/property</rdfs:isDefinedBy>
-        <rdfs:label>has composer</rdfs:label>
+        <rdfs:label>composed by</rdfs:label>
         <skos:definition xml:lang="en">The relation is used to bind a musical expression to its composer.</skos:definition>
-        <skos:prefLabel xml:lang="en">has composer</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">composed by</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -163,9 +163,22 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdfs:comment>A concept with which there is an associative semantic relationship.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/TR/swbp-skos-core-spec/</rdfs:isDefinedBy>
+        <rdfs:label>related to</rdfs:label>
+        <skos:prefLabel>related to</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://omac.crimproject.org/agree -->
 
-    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/agree"/>
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/agree">
+        <rdfs:comment>TESTING</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -196,6 +209,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttribute"/>
         <rdfs:domain rdf:resource="https://omac.crimproject.org/Attribute"/>
         <rdfs:label>attribute of</rdfs:label>
+        <skos:prefLabel>attribute of</skos:prefLabel>
     </owl:ObjectProperty>
     
 
@@ -206,8 +220,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/partOf"/>
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAuthorialPart"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalScorePart"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicScorePart"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>authorial part of</rdfs:label>
         <skos:definition xml:lang="en">The relation is used to represent the structure of musical entities, e.g., a symphony composed of movements and sections.</skos:definition>
         <skos:prefLabel xml:lang="en">authorial part of</skos:prefLabel>
@@ -220,7 +234,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/composerOf">
         <rdfs:domain rdf:resource="https://schema.org/Person"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>composer of</rdfs:label>
         <skos:definition xml:lang="en">The relation is used to bind a musical entity to the person who composed it</skos:definition>
         <skos:prefLabel xml:lang="en">composer of</skos:prefLabel>
@@ -339,8 +353,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/derivativeOf">
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/modelFor"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>derivative of</rdfs:label>
         <skos:prefLabel xml:lang="en">derivative of</skos:prefLabel>
     </owl:ObjectProperty>
@@ -351,7 +365,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/expressionOf">
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasExpression"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>expression of</rdfs:label>
         <skos:prefLabel xml:lang="en">expression of</skos:prefLabel>
     </owl:ObjectProperty>
@@ -379,8 +393,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasAuthorialPart">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasPart"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalScorePart"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicScorePart"/>
         <rdfs:comment>The relation is used to represent the structure of musical entities, e.g., a symphony composed of movements and sections.</rdfs:comment>
         <rdfs:label xml:lang="en">has authorial part</rdfs:label>
         <skos:prefLabel xml:lang="en">has authorial part</skos:prefLabel>
@@ -392,7 +406,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- https://omac.crimproject.org/hasExpression -->
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasExpression">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>has expression</rdfs:label>
         <skos:prefLabel xml:lang="en">has expression</skos:prefLabel>
     </owl:ObjectProperty>
@@ -474,8 +488,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasSection">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasAuthorialPart"/>
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/sectionOf"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalScore"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalSection"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicScore"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicSection"/>
         <rdfs:comment>This relationship is used to model a musical work that is (authorial) section of another musical work. Sections could be further decomposed into sub-sections (see the relation: has subsection)</rdfs:comment>
         <rdfs:label>has section</rdfs:label>
         <skos:prefLabel xml:lang="en">has section</skos:prefLabel>
@@ -488,7 +502,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasSegment">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasPart"/>
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/segmentOf"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:range rdf:resource="https://omac.crimproject.org/AnalyticSegment"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="https://omac.crimproject.org/hasAuthorialPart"/>
@@ -517,8 +531,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasSubsection">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasAuthorialPart"/>
         <owl:inverseOf rdf:resource="https://omac.crimproject.org/subsectionOf"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalSubsection"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicSubsection"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="https://omac.crimproject.org/hasSection"/>
             <rdf:Description rdf:about="https://omac.crimproject.org/hasSubsection"/>
@@ -544,8 +558,8 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- https://omac.crimproject.org/modelFor -->
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/modelFor">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="https://omac.crimproject.org/modelIn"/>
             <rdf:Description rdf:about="https://omac.crimproject.org/concernsDerivative"/>
@@ -646,7 +660,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/scoringOf">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/attributeOf"/>
         <rdfs:domain rdf:resource="https://omac.crimproject.org/PerformingForceAttribute"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>scoring of</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The relation is used to link a musical entity to its performing forces</skos:definition>
         <skos:prefLabel xml:lang="en">scoring of</skos:prefLabel>
@@ -658,7 +672,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/sectionOf">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/authorialPartOf"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalSection"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicSection"/>
         <rdfs:label>section of</rdfs:label>
         <skos:prefLabel xml:lang="en">section of</skos:prefLabel>
     </owl:ObjectProperty>
@@ -670,7 +684,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/segmentOf">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/partOf"/>
         <rdfs:domain rdf:resource="https://omac.crimproject.org/AnalyticSegment"/>
-        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>segment of</rdfs:label>
         <skos:altLabel xml:lang="en">analytic segment of</skos:altLabel>
         <skos:prefLabel xml:lang="en">segment of</skos:prefLabel>
@@ -682,7 +696,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
 
     <owl:ObjectProperty rdf:about="https://omac.crimproject.org/subsectionOf">
         <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/authorialPartOf"/>
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalSubsection"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicSubsection"/>
         <rdfs:label>subsection of</rdfs:label>
         <skos:prefLabel xml:lang="en">subsection of</skos:prefLabel>
     </owl:ObjectProperty>
@@ -749,7 +763,7 @@ Richard Freedman, Haverford College, USA</dcterms:creator>
     <!-- http://dbpedia.org/property/composed -->
 
     <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/composed">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">composition date</rdfs:label>
         <skos:altLabel xml:lang="en">composed</skos:altLabel>
@@ -822,7 +836,7 @@ If the CRIM&apos;s database includes title only (hence, no full title), dcterms:
     <!-- https://omac.crimproject.org/order -->
 
     <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/order">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>authorial part order</rdfs:label>
         <skos:altLabel xml:lang="en">order</skos:altLabel>
         <skos:definition xml:lang="en">The relation is used to represent the order of an authorial part (i.e., section or subsection) in a musical work. For example, a section of genre Kyrie is the first part of masses</skos:definition>
@@ -845,7 +859,7 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
     <!-- https://omac.crimproject.org/sectionsNumber -->
 
     <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/sectionsNumber">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>has number of sections</rdfs:label>
         <skos:definition xml:lang="en">Total number of sections in a musical work</skos:definition>
         <skos:prefLabel xml:lang="en">has number of sections</skos:prefLabel>
@@ -856,7 +870,7 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
     <!-- https://omac.crimproject.org/subsectionsNumber -->
 
     <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/subsectionsNumber">
-        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:label>has number of subsections</rdfs:label>
         <skos:definition xml:lang="en">Total number of subsections in a section or musical work</skos:definition>
         <skos:prefLabel xml:lang="en">has number of subsections</skos:prefLabel>
@@ -983,7 +997,7 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
                     <rdf:Description rdf:about="https://schema.org/Person"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://omac.crimproject.org/composerOf"/>
-                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicExpression"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1000,15 +1014,15 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
     <!-- https://omac.crimproject.org/AnalyticSegment -->
 
     <owl:Class rdf:about="https://omac.crimproject.org/AnalyticSegment">
-        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/segmentOf"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -1022,12 +1036,12 @@ https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefined
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://omac.crimproject.org/segmentOf"/>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/partOf"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
@@ -1150,9 +1164,9 @@ Attribute -hasValue -AttributeValue</rdfs:comment>
     
 
 
-    <!-- https://omac.crimproject.org/MusicalExpression -->
+    <!-- https://omac.crimproject.org/MusicExpression -->
 
-    <owl:Class rdf:about="https://omac.crimproject.org/MusicalExpression">
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicExpression">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://dbpedia.org/property/composer"/>
@@ -1168,62 +1182,27 @@ Attribute -hasValue -AttributeValue</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/hasPart"/>
-                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicExpression"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/partOf"/>
-                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicExpression"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An expression is an abstract (and complex) pattern of characters in a certain notation (e.g., musical notation).
-Musical Expression is a general modeling element to organize more specific classes in the taxonomy. 
-It is not meant to be directly instantiated. It is not declared to be equivalent to its subclasses because we leave it open the possibility to further specialize its taxonomy.</rdfs:comment>
-        <rdfs:label>Musical Expression</rdfs:label>
-        <skos:prefLabel xml:lang="en">Musical Expression</skos:prefLabel>
     </owl:Class>
     
 
 
-    <!-- https://omac.crimproject.org/MusicalScore -->
+    <!-- https://omac.crimproject.org/MusicScore -->
 
-    <owl:Class rdf:about="https://omac.crimproject.org/MusicalScore">
-        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
-        <rdfs:label>Musical Score</rdfs:label>
-        <skos:prefLabel xml:lang="en">Musical Score</skos:prefLabel>
-    </owl:Class>
-    
-
-
-    <!-- https://omac.crimproject.org/MusicalScorePart -->
-
-    <owl:Class rdf:about="https://omac.crimproject.org/MusicalScorePart">
-        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicScore">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicExpression"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://omac.crimproject.org/authorialPartOf"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://omac.crimproject.org/authorialPartOf"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAuthorialPart"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicScorePart"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1233,45 +1212,94 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="https://omac.crimproject.org/AnalyticSegment"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">The notion of Musical Score Part is based on the authorial division of a musical composition in different parts as given by composers and identified in scores through, e.g., formal divisions.</rdfs:comment>
-        <rdfs:comment xml:lang="en">This class is meant to be instantiated only through its subclasses. Also, it could be - in principle - extended to cover other authorial subdivisions of musical pieces</rdfs:comment>
-        <rdfs:label>Musical Score Part</rdfs:label>
-        <skos:altLabel>Musical Score Authorial Part</skos:altLabel>
-        <skos:prefLabel xml:lang="en">Musical Score Part</skos:prefLabel>
+        <rdfs:label>Music Score</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Score</skos:prefLabel>
     </owl:Class>
     
 
 
-    <!-- https://omac.crimproject.org/MusicalSection -->
+    <!-- https://omac.crimproject.org/MusicScorePart -->
 
-    <owl:Class rdf:about="https://omac.crimproject.org/MusicalSection">
-        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicalScorePart"/>
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicScorePart">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicExpression"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/authorialPartOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasPart"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://omac.crimproject.org/AnalyticSegment"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/partOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The notion of Music Score Part is based on the authorial division of a musical composition in different parts as given by composers and identified in scores through, e.g., formal divisions.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class is meant to be instantiated only through its subclasses. Also, it could be - in principle - extended to cover other authorial subdivisions of musical pieces</rdfs:comment>
+        <rdfs:label>Music Score Part</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Score Part</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicSection -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicSection">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicScorePart"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/sectionOf"/>
-                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicalScore"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicScore"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAuthorialPart"/>
-                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicalSubsection"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicSubsection"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/sectionOf"/>
-                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicalScore"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicScore"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://omac.crimproject.org/MusicalSubsection"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/MusicSubsection"/>
         <rdfs:label>Section</rdfs:label>
+        <skos:altLabel xml:lang="en">Music Section</skos:altLabel>
         <skos:altLabel xml:lang="en">movement</skos:altLabel>
         <skos:prefLabel xml:lang="en">Section</skos:prefLabel>
         <omac:Example xml:lang="en">Each movement of Beethoven&apos;s Symphony No. 9</omac:Example>
@@ -1280,16 +1308,16 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- https://omac.crimproject.org/MusicalSubsection -->
+    <!-- https://omac.crimproject.org/MusicSubsection -->
 
-    <owl:Class rdf:about="https://omac.crimproject.org/MusicalSubsection">
-        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicalScorePart"/>
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicSubsection">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicScorePart"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://omac.crimproject.org/hasPart"/>
-                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicalScorePart"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicScorePart"/>
                     </owl:Restriction>
                 </owl:complementOf>
             </owl:Class>
@@ -1300,8 +1328,8 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalSection"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicSection"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -1313,8 +1341,8 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalSection"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicSection"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:allValuesFrom>
@@ -1322,6 +1350,7 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
         </rdfs:subClassOf>
         <rdfs:comment>Subsections are the smallest parts of musical works which can not be further decomposed in authorial musical entities</rdfs:comment>
         <rdfs:label>Subsection</rdfs:label>
+        <skos:altLabel xml:lang="en">Music Subsection</skos:altLabel>
         <skos:prefLabel xml:lang="en">Subsection</skos:prefLabel>
         <omac:Example xml:lang="en">The Christe as subsection of the Kyrie (section) of the Missa je suis déshéritée by Jean Guyon</omac:Example>
     </owl:Class>
@@ -1420,55 +1449,6 @@ It is not meant to be directly instantiated. It is not declared to be equivalent
     
 
 
-    <!-- https://omac.crimproject.org/SegmentationObservation -->
-
-    <owl:Class rdf:about="https://omac.crimproject.org/SegmentationObservation">
-        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Observation"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://omac.crimproject.org/concernsPiece"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://omac.crimproject.org/concernsSegment"/>
-                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/AnalyticSegment"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A segmentation observation is an observation that proposes a &apos;division&apos; of a musical entity in analytic segments.
-
-The pattern is:
-
-SegmentationObservation 
--concerns piece - Musical Work (or Musical Work Authorialpart); 
-- concerns segment - Analytic Segment
-
-Then
-
-Analytic Segment at stake is segment_of the Musical Work (or authorial part) at stake</rdfs:comment>
-        <rdfs:comment>For discussion/testing purposes -- not used at the current state</rdfs:comment>
-        <rdfs:label>Segmentation Observation</rdfs:label>
-        <skos:prefLabel xml:lang="en">Segmentation Observation</skos:prefLabel>
-        <omac:Example>The observation at the following address (https://crimproject.org/observations/1/) identifying a certain analytic segment (in red)
-
-The pattern for the example would be something like:
-
-:segObs1 
-rdf:type :SegmentationObservation;
-:concerns_piece :me1; #(where :me1 could be a musical work)
-:concerns_segment :seg1.</omac:Example>
-    </owl:Class>
-    
-
-
     <!-- https://omac.crimproject.org/SimilarityObservation -->
 
     <owl:Class rdf:about="https://omac.crimproject.org/SimilarityObservation">
@@ -1476,13 +1456,13 @@ rdf:type :SegmentationObservation;
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/concernsDerivative"/>
-                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicExpression"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/concernsModel"/>
-                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicalExpression"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicExpression"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1534,19 +1514,6 @@ SimilarityObservation - concerns_model - Musical Entity
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://omac.crimproject.org/concernsPiece"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalExpression"/>
-                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://omac.crimproject.org/concernsSegment"/>
                 <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/AnalyticSegment"/>
             </owl:Restriction>
@@ -1559,28 +1526,12 @@ SchemaObservation
 -concerns attribute - Schema
  - concerns attribute value - Schema Value
  - concerns segment - Analytic Segment
-- concerns piece - Score or Score Part (this to improve query-answering)
 
-Then, e.g.,
-
-AnalyticSegment - has attribute - Schema</rdfs:comment>
+The following can be added to improve query-answering
+- concerns piece - Score or Score Part</rdfs:comment>
         <rdfs:label>Structure Observation</rdfs:label>
         <skos:altLabel>Schema Observation</skos:altLabel>
         <skos:prefLabel xml:lang="en">Structure Observation</skos:prefLabel>
-        <omac:Example>According to the observation at the following address (https://crimproject.org/observations/1/) the segment is assigned with the schema-fuga.
-
-The pattern for the example is like:
-
-:schObs1 rdf:type :SchemaObservation; 
-:concerns_attribute :schAttr1; 
-:concerns_attribute_value :schema-fuga;
-:concerns_segment :seg1.
-
-One should then make explicit that :schAttr1 is the attribute of a certain piece. For instance,
-
-:seg1 rdf:type :AnalyticSegment; :hasSchema :schAttr1. 
-
-In this manner, the same schema-attribute (:schAttr1) can be assigned multiple schema-values in the context of different observations</omac:Example>
     </owl:Class>
     
 
@@ -1702,6 +1653,43 @@ In this manner, the same schema-attribute (:schAttr1) can be assigned multiple s
     
 
 
+    <!-- http://iflastandards.info/ns/lrm/lrmoo/F2_Expression -->
+
+    <owl:NamedIndividual rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression">
+        <rdfs:comment>The class F2_Expression in LRMoo (FRBRoo)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cidoc-crm.org/frbroo/sites/default/files/LRMoo_V0.9.6.rdf</rdfs:isDefinedBy>
+        <rdfs:label>F2_Expression</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicExpression -->
+
+    <owl:NamedIndividual rdf:about="https://omac.crimproject.org/MusicExpression">
+        <skos:related rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://omac.crimproject.org/MusicExpression">
+        <rdfs:comment xml:lang="en">An expression is an abstract (and complex) pattern of characters in a particular notation (e.g., musical notation).
+Musical Expression serves as a general modeling element to organize more specific classes within the taxonomy.
+It is not intended to be directly instantiated. We do not declare it as equivalent to its subclasses because we leave open the possibility of further specialization within its taxonomy.</rdfs:comment>
+        <rdfs:comment>Using skos:relatedTo, this class is mapped to LRMoo&apos;s F2_Expression.</rdfs:comment>
+        <rdfs:label>Music Expression</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Expression</skos:prefLabel>
+    </rdf:Description>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1718,7 +1706,7 @@ In this manner, the same schema-attribute (:schAttr1) can be assigned multiple s
             <rdf:Description rdf:about="https://omac.crimproject.org/Attribute"/>
             <rdf:Description rdf:about="https://omac.crimproject.org/AttributeValue"/>
             <rdf:Description rdf:about="https://omac.crimproject.org/EntityType"/>
-            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalExpression"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/MusicExpression"/>
             <rdf:Description rdf:about="https://omac.crimproject.org/Observation"/>
             <rdf:Description rdf:about="https://schema.org/Person"/>
         </owl:members>
@@ -1727,8 +1715,8 @@ In this manner, the same schema-attribute (:schAttr1) can be assigned multiple s
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://omac.crimproject.org/AnalyticSegment"/>
-            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScore"/>
-            <rdf:Description rdf:about="https://omac.crimproject.org/MusicalScorePart"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScore"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/MusicScorePart"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
