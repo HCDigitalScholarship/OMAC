@@ -5,7 +5,7 @@ The repository contains an OWL ontology, called OMAC - Ontology for Analytic Cla
 The Endpoint is available at: https://lod.crimproject.org/. 
 It allow accessing CRIM's data through the OnTop Virtual Knowledge Graph System (https://ontop-vkg.org/).
 
-The code for the SPARQL Endpoint, including a copy of the OBDA mappings, is available at the following GitHub repository: https://github.com/CRIM-Project/ontop
+The code for the SPARQL Endpoint, including a copy of the OBDA mappings and sample SPARQL queries, is available at the following GitHub repository: https://github.com/CRIM-Project/ontop
 
 ### Reference:
 * Sanfilippo, E. M., & Freedman, R. (2023). CRIM and the Ontology for Analytic Claims in Music (OMAC). CRIM Essay available at: https://crimwp.richardfreedman.sites.haverford.edu/?page_id=1180
