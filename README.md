@@ -9,7 +9,6 @@ It allow accessing CRIM's data through the OnTop Virtual Knowledge Graph System 
 The specification of the VGK application is available at: https://github.com/CRIM-Project/ontop
 
 ### Reference:
-* Sanfilippo, E. M., & Freedman, R. (2023). CRIM and the Ontology for Analytic Claims in Music (OMAC). CRIM Essay available at: https://crimwp.richardfreedman.sites.haverford.edu/?page_id=1180
 * Sanfilippo, E. M., & Freedman, R. (2022). Ontology for Analytic Claims in Music. In European Conference on Advances in Databases and Information Systems (pp. 559-571). Springer, Cham.
 https://link.springer.com/chapter/10.1007/978-3-031-15743-1_51
 
