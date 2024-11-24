@@ -544,9 +544,9 @@ If the CRIM&apos;s database includes title only (hence, no full title), dcterms:
     
 
 
-    <!-- https://omac.crimproject.org/emaIdentifier -->
+    <!-- https://omac.crimproject.org/EMAidentifier -->
 
-    <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/emaIdentifier">
+    <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/EMAidentifier">
         <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
         <rdfs:comment>Relationship used in CRIM to refer to EMA code</rdfs:comment>
         <rdfs:label>ema_code</rdfs:label>
