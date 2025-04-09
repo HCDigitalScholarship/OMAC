@@ -1,0 +1,1974 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://data.crimproject.org/"
+     xml:base="https://data.crimproject.org/"
+     xmlns:dbo="http://dbpedia.org/ontology/"
+     xmlns:dbp="http://dbpedia.org/property/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wdt="http://www.wikidata.org/prop/direct/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:omac="https://omac.crimproject.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:viaf="http://viaf.org/viaf/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:schema="https://schema.org/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://omac.crimproject.org/">
+        <dcterms:creator>Emilio M. Sanfilippo, Laboratory for Applied Ontology, ISTC-CNR, Italy
+Alessandro Mosca, Laboratory for Applied Ontology, ISTC-CNR, Italy
+Richard Freedman, Haverford College, USA</dcterms:creator>
+        <dcterms:subject>Music and Musicology</dcterms:subject>
+        <rdfs:comment>OMAC is developed in the context of a research project in digital musicology. To find more, see: https://crimproject.org/</rdfs:comment>
+        <rdfs:label>Ontology for Analytic Claims in Music (OMAC)</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/</rdfs:isDefinedBy>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/subject">
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/</rdfs:isDefinedBy>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- https://omac.crimproject.org/Example -->
+
+    <owl:AnnotationProperty rdf:about="https://omac.crimproject.org/Example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date">
+        <rdfs:comment xml:lang="en">Common xsd:date format is: YYYY-MM-DD (e.g., 2001-10-26)</rdfs:comment>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>A concept with which there is an associative semantic relationship.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/TR/swbp-skos-core-spec/</rdfs:isDefinedBy>
+        <rdfs:label>related to</rdfs:label>
+        <skos:prefLabel>related to</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/assertedBy -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/assertedBy">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/claimedBy"/>
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/asserts"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://schema.org/Person"/>
+        <owl:propertyDisjointWith rdf:resource="https://omac.crimproject.org/rejectedBy"/>
+        <rdfs:label>asserted by</rdfs:label>
+        <skos:prefLabel>asserted by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/asserts -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/asserts">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/claims"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/Claim"/>
+        <owl:propertyDisjointWith rdf:resource="https://omac.crimproject.org/rejects"/>
+        <rdfs:label>asserts</rdfs:label>
+        <skos:prefLabel>asserts</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/attributeOf -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/attributeOf">
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttribute"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:complementOf rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>attribute of</rdfs:label>
+        <skos:prefLabel>attribute of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/claimedBy -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/claimedBy">
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/claims"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>claimed by</rdfs:label>
+        <skos:prefLabel>claimed by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/claims -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/claims">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:label>claims</rdfs:label>
+        <skos:prefLabel>claims</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/composerOf -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/composerOf">
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasComposer"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:label>composer of</rdfs:label>
+        <skos:definition xml:lang="en">The relation is used to bind a music source to the person who composed it</skos:definition>
+        <skos:prefLabel xml:lang="en">composer of</skos:prefLabel>
+        <omac:Example>Ludwig van Beethoven composer of Symphony No. 9</omac:Example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/derivativeOf -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/derivativeOf">
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/modelFor"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:label>derivative of</rdfs:label>
+        <skos:prefLabel xml:lang="en">derivative of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasArgument -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasArgument">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>This relation and all its subrelations are used to relate claims to their arguments</rdfs:comment>
+        <rdfs:label>has argument</rdfs:label>
+        <skos:prefLabel>has argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasAttribute">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:complementOf rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:label>has attribute</rdfs:label>
+        <skos:prefLabel xml:lang="en">has attribute</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasAttributeArg -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasAttributeArg">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasArgument"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:label>has attribute argument</rdfs:label>
+        <skos:prefLabel>has attribute argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasAttributeValue -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasAttributeValue">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <rdfs:label>has value</rdfs:label>
+        <skos:prefLabel xml:lang="en">has value</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasAttributeValueArg -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasAttributeValueArg">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasArgument"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <rdfs:label>has attribute value argument</rdfs:label>
+        <skos:prefLabel>has attribute value argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasComposer -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasComposer">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="https://schema.org/Person"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://omac.crimproject.org/sectionOf"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/hasComposer"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label>composed by</rdfs:label>
+        <skos:definition xml:lang="en">The relation is used to bind a musical source to its composer.</skos:definition>
+        <skos:prefLabel xml:lang="en">composed by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasDerivativeArg -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasDerivativeArg">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasArgument"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:label>has derivative argument</rdfs:label>
+        <skos:prefLabel>has derivative argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasModelArg -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasModelArg">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasArgument"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:label>has model argument</rdfs:label>
+        <skos:prefLabel>has model argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasMusicTextArg -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasMusicTextArg">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasArgument"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:label>has music text argument</rdfs:label>
+        <skos:prefLabel>has music text argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasProperPart -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasProperPart">
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/properPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>has proper part</rdfs:label>
+        <skos:prefLabel>has proper part</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasRole -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasRole">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/SocialRole"/>
+        <rdfs:label>has role</rdfs:label>
+        <skos:prefLabel>has role</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasSection -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasSection">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/sectionOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicAuthorialPart"/>
+        <rdfs:comment>This is a relationship of parthood restricted to musical scores. It is introduced for terminological compliance with the domain of music where it is common to talk about movements or sections of music scores</rdfs:comment>
+        <rdfs:label>has music section</rdfs:label>
+        <skos:altLabel>has music movement</skos:altLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasSegment -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasSegment">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/segmentOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicSegment"/>
+        <rdfs:label>has segment</rdfs:label>
+        <skos:prefLabel>has segment</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/hasSimilarityTypeArg -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/hasSimilarityTypeArg">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/hasArgument"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/SimilarityType"/>
+        <rdfs:label>has similarity type argument</rdfs:label>
+        <skos:prefLabel>has similarity type argument</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/modelFor -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/modelFor">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:comment>Relation used to represent an expression/musical entity that is used as model for another expression/musical entity (by the same or different composer)</rdfs:comment>
+        <rdfs:label>model for</rdfs:label>
+        <skos:prefLabel>model for</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/properPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/properPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>proper part of</rdfs:label>
+        <skos:prefLabel>proper part of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/rejectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/rejectedBy">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/claimedBy"/>
+        <owl:inverseOf rdf:resource="https://omac.crimproject.org/rejects"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:range rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>rejected by</rdfs:label>
+        <skos:prefLabel>rejected by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/rejects -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/rejects">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/claims"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:label>rejects</rdfs:label>
+        <skos:prefLabel>rejects</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/sectionOf -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/sectionOf">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/properPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicAuthorialPart"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:comment>This relationship is to be used to represent the (authorial) structure of music scores, e.g., the score of a symphony with its multiple movements</rdfs:comment>
+        <rdfs:label>Music section of</rdfs:label>
+        <skos:altLabel>Music movement of</skos:altLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/segmentOf -->
+
+    <owl:ObjectProperty rdf:about="https://omac.crimproject.org/segmentOf">
+        <rdfs:subPropertyOf rdf:resource="https://omac.crimproject.org/properPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicSegment"/>
+        <rdfs:range rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://omac.crimproject.org/segmentOf"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/sectionOf"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label>segment of</rdfs:label>
+        <skos:prefLabel>segment of</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/birthPlace -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/birthPlace">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:isDefinedBy>https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>has birth place</rdfs:label>
+        <skos:prefLabel xml:lang="en">has birth place</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/deathPlace -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/deathPlace">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>death place</rdfs:label>
+        <skos:prefLabel xml:lang="en">death place</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/deathYear -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/deathYear">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:comment>Value commonly is: YYYY (e.g., 1850)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/ontology/</rdfs:isDefinedBy>
+        <rdfs:label>death year</rdfs:label>
+        <skos:prefLabel xml:lang="en">death year</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/birthYear -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/birthYear">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:comment>Value commonly is: YYYY (e.g., 1850)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label>birth year</rdfs:label>
+        <skos:prefLabel xml:lang="en">birth year</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/composed -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/composed">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>This relation is used to represent the composition date of a music source.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">composition date</rdfs:label>
+        <skos:altLabel xml:lang="en">composed</skos:altLabel>
+        <skos:prefLabel>composition date</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/property/fullTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/property/fullTitle">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>In the specific context of CRIM, to represent the full title of a resource.
+If the CRIM&apos;s database includes title only (hence, no full title), dcterms:title is to be used</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/property/</rdfs:isDefinedBy>
+        <rdfs:label>full title</rdfs:label>
+        <skos:prefLabel>full title</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Title of a resoure</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</rdfs:isDefinedBy>
+        <rdfs:label>title</rdfs:label>
+        <skos:prefLabel xml:lang="en">title</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P214 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.wikidata.org/prop/direct/P214">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>identifier for the Virtual International Authority File database</rdfs:comment>
+        <rdfs:isDefinedBy>wikidata</rdfs:isDefinedBy>
+        <rdfs:label>VIAF ID</rdfs:label>
+        <skos:prefLabel>VIAF id</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/EMAidentifier -->
+
+    <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/EMAidentifier">
+        <rdfs:domain rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Relationship used in CRIM to refer to EMA code</rdfs:comment>
+        <rdfs:label>EMA identifier</rdfs:label>
+        <skos:prefLabel>EMA identifier</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://omac.crimproject.org/remarks -->
+
+    <owl:DatatypeProperty rdf:about="https://omac.crimproject.org/remarks">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">CRIM Vocabularies:
+https://sites.google.com/haverford.edu/crim-project/vocabularies</rdfs:isDefinedBy>
+        <rdfs:label>remarks</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/birthDate -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/birthDate">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Date of birth. This is used for a full date with: YYYY-MM-DD.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>birth date</rdfs:label>
+        <skos:prefLabel xml:lang="en">birth date</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/deathDate -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/deathDate">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Date of death. This is used for a full date with: YYYY-MM-DD.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>death date</rdfs:label>
+        <skos:prefLabel xml:lang="en">death date</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/familyName -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/familyName">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>familyname</rdfs:label>
+        <skos:prefLabel xml:lang="en">familyname</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/givenName -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/givenName">
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://schema.org</rdfs:isDefinedBy>
+        <rdfs:label>firstname</rdfs:label>
+        <skos:prefLabel>firstname</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">firstname</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/name">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>In the case of persons, this relation is used to represent full name (e.g., Ludwig van Beethoven). schema:familyName can be used for surnames only; schema:givenName for names only.</rdfs:comment>
+        <rdfs:isDefinedBy>https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>name</rdfs:label>
+        <skos:prefLabel>name</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/url -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/url">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:isDefinedBy xml:lang="en">https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>URL</rdfs:label>
+        <skos:prefLabel xml:lang="en">URL</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="http://schema.org/Place">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                <owl:allValuesFrom rdf:resource="http://schema.org/Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/properPartOf"/>
+                <owl:allValuesFrom rdf:resource="http://schema.org/Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Claim"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/EntityType"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Text"/>
+        <owl:disjointWith rdf:resource="https://schema.org/Person"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>Place</rdfs:label>
+        <skos:prefLabel xml:lang="en">Place</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/Attribute -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/Attribute">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/attributeOf"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Claim"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/EntityType"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Text"/>
+        <owl:disjointWith rdf:resource="https://schema.org/Person"/>
+        <rdfs:comment>An attribute is used to qualify a domain entity, e.g., to represent the genre of a musical score.
+
+The pattern is as follows:
+owl:Thing -hasAttribute -Attribute
+Attribute -hasAttributeValue -AttributeValue</rdfs:comment>
+        <rdfs:comment>The list of attributes is not exhaustive</rdfs:comment>
+        <rdfs:label>Attribute</rdfs:label>
+        <skos:prefLabel xml:lang="en">Attribute</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/AttributeValue -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/AttributeValue">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Claim"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/EntityType"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Text"/>
+        <owl:disjointWith rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Attribute Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Attribute Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/Claim -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/Claim">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/claimedBy"/>
+                <owl:someValuesFrom rdf:resource="https://schema.org/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasArgument"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/Claim"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/properPartOf"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/Claim"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/EntityType"/>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Text"/>
+        <owl:disjointWith rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Claim</rdfs:label>
+        <skos:altLabel xml:lang="en">Observation</skos:altLabel>
+        <skos:altLabel xml:lang="en">Statement</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Claim</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/EntityType -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/EntityType">
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/Text"/>
+        <owl:disjointWith rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Entity Type</rdfs:label>
+        <skos:prefLabel xml:lang="en">Entity Type</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/GenreAttribute -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/GenreAttribute">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/GenreValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/GenreValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Genre</rdfs:label>
+        <skos:altLabel xml:lang="en">Genre Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Genre</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/GenreValue -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/GenreValue">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/GenreAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/GenreAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Genre Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Genre Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/KeyAttribute -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/KeyAttribute">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/KeyValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/KeyValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Key</rdfs:label>
+        <skos:altLabel xml:lang="en">Key Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Key</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/KeyValue -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/KeyValue">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/KeyAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/KeyAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Key Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Key Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicAuthorialPart -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicAuthorialPart">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://omac.crimproject.org/MusicSection"/>
+                    <rdf:Description rdf:about="https://omac.crimproject.org/MusicSubsection"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:comment>A music authorial part is a part of a composition reflecting the manner in which
+a composition is structured into parts as given by composers and identified in scores through formal divisions.</rdfs:comment>
+        <rdfs:label>Music Authorial Part</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Authorial Part</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicComposition -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicComposition">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:label>Music Composition</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Composition</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicSection -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicSection">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://omac.crimproject.org/MusicAuthorialPart"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://omac.crimproject.org/properPartOf"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicComposition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicComposition"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>Music Section</rdfs:label>
+        <skos:altLabel xml:lang="en">Music Movement</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Music Section</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicSegment -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicSegment">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/MusicText"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicComposition"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicSection"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicSubsection"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/properPartOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicAuthorialPart"/>
+                            <rdf:Description rdf:about="https://omac.crimproject.org/MusicComposition"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Music Segment</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Segment</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicSubsection -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicSubsection">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://omac.crimproject.org/MusicAuthorialPart"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://omac.crimproject.org/properPartOf"/>
+                        <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/MusicSection"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label>Music Subsection</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Subsection</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/MusicText -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/MusicText">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Text"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/MusicText"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class is hereby meant to be instantiated only through its subclasses. It is not declared to be equivalent to the disjunction of its subclasses because its taxonomy can be further extended</rdfs:comment>
+        <rdfs:label>Music Text</rdfs:label>
+        <skos:prefLabel xml:lang="en">Music Text</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/SchemaAttribute -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/SchemaAttribute">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/SchemaValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/SchemaValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Schema Attribute</rdfs:label>
+        <skos:prefLabel xml:lang="en">Schema Attribute</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/SchemaValue -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/SchemaValue">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/SchemaAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/SchemaAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Schema Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Schema Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/SimilarityClaim -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/SimilarityClaim">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasArgument"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasDerivativeArg"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/MusicText"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasModelArg"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/MusicText"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasSimilarityTypeArg"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/SimilarityType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://omac.crimproject.org/StructureClaim"/>
+        <rdfs:comment>In a claim of similarity, an observer claims a relation of similarity between two music texts, where one text is the model for the other (the derivative).</rdfs:comment>
+        <rdfs:label>Similarity Claim</rdfs:label>
+        <skos:prefLabel xml:lang="en">Similarity Claim</skos:prefLabel>
+        <omac:Example>The chason O gente Brunette by Thomas Champion is the model for Nicolas De Marle&apos;s Kyrie in Mass of O Gente Brunette (the derivative)</omac:Example>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/SimilarityType -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/SimilarityType">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/EntityType"/>
+        <rdfs:comment>Used in CRIM to retrieve the type of similarity relationship</rdfs:comment>
+        <rdfs:label>Similarity Type</rdfs:label>
+        <skos:prefLabel xml:lang="en">Similarity Type</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/SocialRole -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/SocialRole">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/EntityType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://schema.org/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Social role</rdfs:label>
+        <skos:prefLabel xml:lang="en">Social role</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/StructureClaim -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/StructureClaim">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Claim"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeArg"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/SchemaAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValueArg"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/SchemaValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasArgument"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeArg"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/SchemaAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValueArg"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/SchemaValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasMusicTextArg"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://omac.crimproject.org/MusicText"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>In a claim of structure, an observer classifies a music text under a certain schema type</rdfs:comment>
+        <rdfs:label>Structure Claim</rdfs:label>
+        <skos:prefLabel xml:lang="en">Structure Claim</skos:prefLabel>
+        <omac:Example>For example, a music segment in Tota pulchra es is classified as a Fuga (https://crimproject.org/observations/1/)</omac:Example>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/StyleAttribute -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/StyleAttribute">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/StyleValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/StyleValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Style</rdfs:label>
+        <skos:altLabel xml:lang="en">Style Attribute</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Style</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/StyleValue -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/StyleValue">
+        <rdfs:subClassOf rdf:resource="https://omac.crimproject.org/AttributeValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://omac.crimproject.org/StyleAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://omac.crimproject.org/hasAttributeValue"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/StyleAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Style Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">Style Value</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://omac.crimproject.org/Text -->
+
+    <owl:Class rdf:about="https://omac.crimproject.org/Text">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/hasProperPart"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/Text"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://omac.crimproject.org/properPartOf"/>
+                <owl:allValuesFrom rdf:resource="https://omac.crimproject.org/Text"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://schema.org/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+    <owl:Class rdf:about="https://schema.org/Person">
+        <rdfs:subClassOf rdf:nodeID="genid85"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/birthDate"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/deathDate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy>https://schema.org/</rdfs:isDefinedBy>
+        <rdfs:label>Person</rdfs:label>
+        <skos:prefLabel xml:lang="en">Person</skos:prefLabel>
+    </owl:Class>
+    <owl:Restriction rdf:nodeID="genid85">
+        <owl:onProperty rdf:resource="https://schema.org/birthPlace"/>
+        <owl:someValuesFrom rdf:resource="http://schema.org/Place"/>
+    </owl:Restriction>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://schema.org/Person"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid85"/>
+        <rdfs:comment>We use &apos;some&apos; instead of a specific cardinality restriction in order to allow reasoning over places (e.g., if p dies in Paris, which is in France, then p dies in France)</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iflastandards.info/ns/lrm/lrmoo/F2_Expression -->
+
+    <owl:NamedIndividual rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression">
+        <rdfs:comment>The class F2_Expression in LRMoo (FRBRoo)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cidoc-crm.org/frbroo/sites/default/files/LRMoo_V0.9.6.rdf</rdfs:isDefinedBy>
+        <rdfs:label>F2_Expression</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://omac.crimproject.org/Text -->
+
+    <owl:NamedIndividual rdf:about="https://omac.crimproject.org/Text">
+        <skos:related rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://omac.crimproject.org/Text">
+        <rdfs:label>Text</rdfs:label>
+        <skos:prefLabel>Text</skos:prefLabel>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://omac.crimproject.org/GenreAttribute"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/KeyAttribute"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/SchemaAttribute"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/StyleAttribute"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://omac.crimproject.org/GenreValue"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/KeyValue"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/SchemaValue"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/StyleValue"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://omac.crimproject.org/MusicAuthorialPart"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/MusicComposition"/>
+            <rdf:Description rdf:about="https://omac.crimproject.org/MusicSegment"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#v">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://omac.crimproject.org/SimilarityClaim"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasModelArg"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasDerivativeArg"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasSimilarityTypeArg"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="https://omac.crimproject.org/SimilarityClaim"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasModelArg"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                                <swrl:argument2 rdf:resource="urn:swrl:var#m"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasDerivativeArg"/>
+                                                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                                        <swrl:argument2 rdf:resource="urn:swrl:var#d"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasSimilarityTypeArg"/>
+                                                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#SameIndividualAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://omac.crimproject.org/SimilarityClaim"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasModelArg"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasDerivativeArg"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/segmentOf"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#m"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#v"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/segmentOf"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#d"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/modelFor"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#m"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/modelFor"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasAttributeArg"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasMusicTextArg"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasAttributeValueArg"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#v"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasAttributeValueArg"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#v"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="https://omac.crimproject.org/StructureClaim"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="https://omac.crimproject.org/StructureClaim"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasMusicTextArg"/>
+                                                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                                                        <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasAttributeArg"/>
+                                                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                                                <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#SameIndividualAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasAttributeArg"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://omac.crimproject.org/StructureClaim"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/hasMusicTextArg"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/attributeOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/segmentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/sectionOf"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://omac.crimproject.org/segmentOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
